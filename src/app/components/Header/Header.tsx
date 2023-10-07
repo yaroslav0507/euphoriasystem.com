@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 
 const HeaderWrapper = styled.div`
   height: 55px;
+  margin: 12px 0;
 `;
 
 const HeaderCol = styled(Col)`

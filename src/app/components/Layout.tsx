@@ -6,16 +6,16 @@ import { HomeSection } from "./sections/Home/HomeSection";
 
 export const Layout = () => {
   return (
-    <Container>
-      <Row>
-        <Col>
-          <Header />
-        </Col>
+    <>
+      <Header />
 
-        <Col>
-          <HomeSection />
-        </Col>
-      </Row>
-    </Container>
+      <Container>
+        <Row>
+          <Col>
+            <HomeSection />
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 };
