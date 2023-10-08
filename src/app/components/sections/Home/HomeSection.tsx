@@ -30,7 +30,7 @@ const TextCol = styled(Col)`
   position: absolute;
   padding-bottom: 12px;
   padding-top: 50px;
-  bottom: 0;
+  bottom: -1px;
   background: linear-gradient(0deg, #01152d, #01152d94, transparent);
 `;
 

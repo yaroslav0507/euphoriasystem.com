@@ -1,4 +1,5 @@
 import { Header } from "./Header/Header";
+import { AboutSection } from "./sections/Home/AboutSection";
 import { HomeSection } from "./sections/Home/HomeSection";
 import styled from "styled-components";
 
@@ -12,6 +13,8 @@ export const Layout = () => {
       <Header />
 
       <HomeSection />
+
+      <AboutSection />
     </LayoutWrapper>
   );
 };
