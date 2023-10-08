@@ -1,6 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { SectionHeader } from "../../shared/SectionHeader";
 import AboutImage from "../../../img/about_section_image.jpg";
+import { SectionBanner } from "../../shared/SectionBanner";
 import styled from "styled-components";
 
 const ProductImage = styled.div`
@@ -78,6 +79,17 @@ export const AboutSection = () => (
               natural 'feel-good' hormones for self-healing.
             </p>
           </AboutTextWrapper>
+        </Col>
+      </Row>
+    </Container>
+
+    <Container>
+      <Row>
+        <Col xs="12">
+          <SectionBanner
+            title="Meditation and Mindfulness"
+            content="Standing on nails helps focusing your attention on the present moment, enhance concentration, and achieve mental clarity."
+          />
         </Col>
       </Row>
     </Container>
