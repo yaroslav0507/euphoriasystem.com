@@ -8,7 +8,8 @@ const Stage = styled(Row)`
   position: relative;
   flex-flow: column-reverse;
   justify-content: flex-end;
-  height: calc(100vh - 92px);
+  height: calc(100vh - 90px);
+  overflow: hidden;
 `;
 
 const ProductImage = styled.img`
