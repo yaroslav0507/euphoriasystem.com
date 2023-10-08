@@ -1,6 +1,7 @@
 import { Header } from "./Header/Header";
-import { AboutSection } from "./sections/Home/AboutSection";
-import { HomeSection } from "./sections/Home/HomeSection";
+import { AboutSection } from "./sections/AboutSection";
+import { HomeSection } from "./sections/HomeSection";
+import { MaterialsSection } from "./sections/MaterialsSection";
 import styled from "styled-components";
 
 const LayoutWrapper = styled.div`
@@ -15,6 +16,8 @@ export const Layout = () => {
       <HomeSection />
 
       <AboutSection />
+
+      <MaterialsSection />
     </LayoutWrapper>
   );
 };

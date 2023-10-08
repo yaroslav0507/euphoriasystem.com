@@ -2,12 +2,18 @@ import { FC } from "react";
 import styled from "styled-components";
 import bg from "../../img/bg_banner.jpeg";
 
-interface SectionBannerProps {
-  title: string;
-  content: string;
+interface BackgroundProps {
+  bgSize?: string;
+  bgPosition?: string;
 }
 
-const Wrapper = styled.div`
+interface SectionBannerProps extends BackgroundProps {
+  title: string;
+  content: string;
+  render?: JSX.Element;
+}
+
+const Wrapper = styled.div<BackgroundProps>`
   display: flex;
   flex-direction: column;
   padding: 32px;
@@ -16,9 +22,9 @@ const Wrapper = styled.div`
   background: url(${bg});
   border-radius: 25px;
   margin-bottom: 40px;
-  background-size: 200%;
-  background-position: 60% 0;
-
+  background-size: ${({ bgSize }) => bgSize || '200%' };
+  background-position: ${({ bgPosition }) => bgPosition || '60% 0' };
+  
   * {
     z-index: 1;
   }
@@ -31,7 +37,7 @@ const Wrapper = styled.div`
     height: 100%;
     position: absolute;
     z-index: 0;
-    background: linear-gradient(90deg, #000000bf, transparent);
+    background: linear-gradient(90deg, #000000b5, #0000004f);
   }
 `;
 
@@ -41,14 +47,22 @@ const Title = styled.h3`
 
 const Content = styled.div`
   font-size: 20px;
+  white-space: pre-line;
 `;
 
-export const SectionBanner: FC<SectionBannerProps> = ({ title, content }) => {
+export const SectionBanner: FC<SectionBannerProps> = ({ 
+  title, 
+  content,
+  render,
+  ...bgProps
+ }) => {
   return (
-    <Wrapper>
+    <Wrapper {...bgProps}>
       <Title>{title}</Title>
 
       <Content>{content}</Content>
+      
+      { render }
     </Wrapper>
   );
 };

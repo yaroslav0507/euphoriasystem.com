@@ -1,35 +1,9 @@
 import { Col, Container, Row } from "react-bootstrap";
-import { SectionHeader } from "../../shared/SectionHeader";
-import AboutImage from "../../../img/about_section_image.jpg";
-import { SectionBanner } from "../../shared/SectionBanner";
+import { SectionHeader } from "../shared/SectionHeader";
+import AboutImage from "../../img/about_section_image.jpg";
+import { SectionBanner } from "../shared/SectionBanner";
 import styled from "styled-components";
-
-const ProductImage = styled.div`
-  width: calc(100% + 24px);
-  margin-left: -12px;
-  height: 100%;
-  min-height: 570px;
-  background: url(${AboutImage});
-  background-size: cover;
-  background-position: center;
-  position: relative;
-
-  &:after {
-    content: "";
-    bottom: 0;
-    width: 100%;
-    height: 15%;
-    position: absolute;
-
-    background: linear-gradient(
-      to bottom left,
-      transparent 0%,
-      transparent 50%,
-      #01152d 50%,
-      #01152d 100%
-    );
-  }
-`;
+import { ImageSection } from "../shared/components";
 
 const AboutTextWrapper = styled.div`
   display: flex;
@@ -51,7 +25,7 @@ export const AboutSection = () => (
     <Container fluid>
       <Row>
         <Col xs="12">
-          <ProductImage />
+          <ImageSection url={ AboutImage } />
         </Col>
 
         <Col xs="12">

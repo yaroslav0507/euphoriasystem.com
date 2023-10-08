@@ -1,8 +1,8 @@
 import { Col, Container, Row } from "react-bootstrap";
-import HeroImage from "../../../img/hero_image_euphoria_sadhu.png";
+import HeroImage from "../../img/hero_image_euphoria_sadhu.png";
 import styled from "styled-components";
-import { SiteButton } from "../../shared/SiteButton";
-import BgHome from "../../../img/bg_home.svg";
+import { SiteButton } from "../shared/components";
+import BgHome from "../../img/bg_home.svg";
 
 const Stage = styled(Row)`
   position: relative;
