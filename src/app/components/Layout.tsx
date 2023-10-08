@@ -1,21 +1,17 @@
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import { Header } from "./Header/Header";
 import { HomeSection } from "./sections/Home/HomeSection";
+import styled from "styled-components";
+
+const LayoutWrapper = styled.div`
+  padding-top: 12px;
+`;
 
 export const Layout = () => {
   return (
-    <>
+    <LayoutWrapper>
       <Header />
 
-      <Container>
-        <Row>
-          <Col>
-            <HomeSection />
-          </Col>
-        </Row>
-      </Container>
-    </>
+      <HomeSection />
+    </LayoutWrapper>
   );
 };
