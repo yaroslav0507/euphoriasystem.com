@@ -5,7 +5,7 @@ import RevievGandhi from '../../img/reviews/review_gandhi.png';
 import RevievSadhguru from '../../img/reviews/review_sadhguru.png';
 import QuoteStart from '../../img/quote_start.svg';
 import QuoteEnd from '../../img/quote_end.svg';
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Review = styled.div`
   color: #000;

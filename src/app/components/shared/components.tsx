@@ -25,6 +25,7 @@ export const ImageSection = styled.div<{
     url: string;
     direction?: 'left' | 'right';
     bgSize?: string;
+    bgColor?: string;
     bgPosition?: string;
  }>`
   width: calc(100% + 24px);
@@ -38,7 +39,7 @@ export const ImageSection = styled.div<{
 
   &:after {
     content: "";
-    bottom: 0;
+    bottom: -1px;
     width: 100%;
     height: 15%;
     position: absolute;
@@ -47,8 +48,8 @@ export const ImageSection = styled.div<{
       to bottom ${({ direction }) => direction || 'left'},
       transparent 0%,
       transparent 50%,
-      #031837 50%,
-      #031837 100%
+      ${({ bgColor }) => bgColor || '#031837'} 50%,
+      ${({ bgColor }) => bgColor || '#031837'} 100%
     );
   }
 `;

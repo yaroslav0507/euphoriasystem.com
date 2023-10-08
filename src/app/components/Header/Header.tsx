@@ -5,8 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import EN from "../../img/langs/en.svg";
 import UA from "../../img/langs/ua.svg";
-import { useCallback, useState } from "react";
-import { Button } from "react-bootstrap";
+import { useState } from "react";
 
 const HeaderWrapper = styled.div`
   height: 55px;

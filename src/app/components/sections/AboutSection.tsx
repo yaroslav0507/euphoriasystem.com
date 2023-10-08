@@ -25,7 +25,10 @@ export const AboutSection = () => (
     <Container fluid>
       <Row>
         <Col xs="12">
-          <ImageSection url={ AboutImage } />
+          <ImageSection
+            bgColor="#01162d"
+            url={ AboutImage }
+          />
         </Col>
 
         <Col xs="12">
