@@ -108,7 +108,10 @@ export const ReviewsSection = () => {
       <Container>
         <Row>
           <Col xs="12">
-            <SectionHeader subtitle="Reviews" title="What People Say" />
+            <SectionHeader 
+              subtitle={t('reviews.subtitle')}
+              title={t('reviews.title')}
+            />
           </Col>
         </Row>
 

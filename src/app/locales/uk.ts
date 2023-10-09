@@ -40,8 +40,8 @@ export default {
         }
     },
     reviews: {
-        subtitle: "Testimonials",
-        title: "What People Say",
+        subtitle: "Відгуки",
+        title: "Що Кажуть Люди",
         items: [
         {
             img: ReviewRajesh,
