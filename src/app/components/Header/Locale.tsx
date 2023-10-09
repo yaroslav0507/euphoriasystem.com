@@ -1,7 +1,7 @@
 import EN from "../../img/langs/en.svg";
 import UA from "../../img/langs/ua.svg";
 import styled from "styled-components";
-import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const LocaleBox = styled.div`
   display: flex;
@@ -27,11 +27,16 @@ const Flag = styled.div<{ url: string }>`
 type Locale = "en" | "ua";
 
 export const Locale = () => {
-  const [locale, setLocale] = useState<Locale>("en");
-  const isUA = locale === "ua";
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng: 'en' | 'ua') => {
+    i18n.changeLanguage(lng);
+  };
+
+  const isUA = i18n.language === "ua";
 
   const toggleLocale = () => {
-    setLocale(isUA ? "en" : "ua");
+    changeLanguage(isUA ? "en" : "ua");
   };
 
   return (

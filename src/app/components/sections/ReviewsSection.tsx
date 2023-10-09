@@ -90,7 +90,7 @@ const ReviewInsta = styled(ReviewSubtitle)`
 `;
 
 const ReviewContent = styled.div`
-  font-weight: 200;
+  font-weight: 300;
   font-size: 18px;
   line-height: 24px;
   text-align: left;

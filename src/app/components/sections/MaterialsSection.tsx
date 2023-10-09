@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { SectionHeader } from "../shared/SectionHeader";
 import BgCooper from "../../img/bg_cooper.jpg";
 import BgAluminium from "../../img/bg_aluminium.jpg";
-import { ImageSection, SectionTextWrapper, SiteButton } from "../shared/components";
+import { ImageSection, SectionTextWrapper, SiteButton } from "../shared/common";
 import styled from "styled-components";
 import { SectionBanner } from "../shared/SectionBanner";
 

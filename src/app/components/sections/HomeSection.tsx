@@ -1,8 +1,9 @@
 import { Col, Container, Row } from "react-bootstrap";
+import { SiteButton } from "../shared/common";
+import { useTranslation } from "react-i18next";
 import HeroImage from "../../img/hero_image_euphoria_sadhu.png";
-import styled from "styled-components";
-import { SiteButton } from "../shared/components";
 import BgHome from "../../img/bg_home.svg";
+import styled from "styled-components";
 
 const Stage = styled(Row)`
   position: relative;
@@ -29,7 +30,7 @@ const ProductTitle = styled.div`
 
 const ProductSubTitle = styled.div`
   font-size: 24px;
-  font-weight: 200;
+  font-weight: 300;
   margin-bottom: 24px;
 `;
 
@@ -68,38 +69,44 @@ const HomeWrapper = styled.div`
   }
 `;
 
-export const HomeSection = () => (
-  <HomeWrapper>
-    <Container>
-      <Stage>
-        <TextCol xs="12">
-          <Row>
-            <Col xs="12">
-              <ProductTitle>Sadhu Boards by Euphoria System</ProductTitle>
-            </Col>
+export const HomeSection = () => {
+  const { t } = useTranslation();
 
-            <Col xs="12">
-              <ProductSubTitle>
-                Is Your Key to the New Dimension of Mindfulness
-              </ProductSubTitle>
-            </Col>
-
-            <Col xs="6">
-              <SiteButton>Buy Now</SiteButton>
-            </Col>
-
-            <Col xs="6">
-              <SiteButton variant="outline-primary">Learn More</SiteButton>
-            </Col>
-          </Row>
-        </TextCol>
-
-        <Col xs="12" className="flex-grow-1">
-          <ProductImage url={HeroImage}/>
-        </Col>
-      </Stage>
-
-      <ProductBackground />
-    </Container>
-  </HomeWrapper>
-);
+  return (
+    <HomeWrapper>
+      <Container>
+        <Stage>
+          <TextCol xs="12">
+            <Row>
+              <Col xs="12">
+                <ProductTitle>
+                  {t('home.title')}
+                </ProductTitle>
+              </Col>
+  
+              <Col xs="12">
+                <ProductSubTitle>
+                  {t('home.subtitle')}
+                </ProductSubTitle>
+              </Col>
+  
+              <Col xs="6">
+                <SiteButton href="#order">{t('button.order')}</SiteButton>
+              </Col>
+  
+              <Col xs="6">
+                <SiteButton href="#about" variant="outline-primary">{t('button.more')}</SiteButton>
+              </Col>
+            </Row>
+          </TextCol>
+  
+          <Col xs="12" className="flex-grow-1">
+            <ProductImage url={HeroImage}/>
+          </Col>
+        </Stage>
+  
+        <ProductBackground />
+      </Container>
+    </HomeWrapper>
+  )
+};
