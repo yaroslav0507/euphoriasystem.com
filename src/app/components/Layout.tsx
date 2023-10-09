@@ -4,6 +4,7 @@ import { AboutSection } from "./sections/AboutSection";
 import { HomeSection } from "./sections/HomeSection";
 import { MaterialsSection } from "./sections/MaterialsSection";
 import { ReviewsSection } from "./sections/ReviewsSection";
+import { ContactsSection } from "./sections/ContactsSection";
 
 const LayoutWrapper = styled.div`
   padding-top: 12px;
@@ -21,6 +22,8 @@ export const Layout = () => {
       <MaterialsSection />
 
       <ReviewsSection />
+
+      <ContactsSection />
     </LayoutWrapper>
   );
 };

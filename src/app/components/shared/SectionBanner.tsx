@@ -42,7 +42,8 @@ const Wrapper = styled.div<BackgroundProps>`
 `;
 
 const Title = styled.h3`
-  font-size: 42px;
+  font-size: 34px;
+  text-transform: capitalize;
 `;
 
 const Content = styled.div`
