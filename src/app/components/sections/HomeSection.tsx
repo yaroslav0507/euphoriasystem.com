@@ -35,7 +35,7 @@ const ProductSubTitle = styled.div`
 
 const TextCol = styled(Col)`
   position: absolute;
-  padding-bottom: 12px;
+  padding-bottom: 3%;
   padding-top: 50px;
   bottom: 0;
   z-index: 2;
@@ -94,7 +94,7 @@ export const HomeSection = () => (
           </Row>
         </TextCol>
 
-        <Col xs="12">
+        <Col xs="12" className="flex-grow-1">
           <ProductImage url={HeroImage}/>
         </Col>
       </Stage>

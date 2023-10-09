@@ -29,7 +29,7 @@ export const MaterialsSection = () => (
           <ImageSection
             url={ BgCooper } 
             direction="right"
-            bgSize="170%"
+            bgSize="auto 140%"
             bgPosition="80% 20%"
           />
         </Col>
@@ -64,8 +64,8 @@ export const MaterialsSection = () => (
           <ImageSection
             url={ BgAluminium } 
             direction="left"
-            bgSize="200%"
-            bgPosition="30% 50%"
+            bgSize="auto 120%"
+            bgPosition="35% 50%"
           />
         </Col>
 

@@ -2,17 +2,32 @@ import styled from "styled-components";
 import { Button, ButtonProps } from "react-bootstrap";
 
 export const SiteButton = styled(Button)<ButtonProps>`
-  border-radius: 10px;
-  padding: 12px;
-  font-size: 18px;
-  text-transform: uppercase;
-  color: ${({ variant }) => (variant === "outline-primary" ? "#FFF" : "#000")};
-  border: ${({ variant }) =>
-    variant === "outline-primary" ? "1px solid #FFF" : "none"};
-  background: ${({ variant }) =>
-    variant === "outline-primary" ? "transparent" : "#FFC700"};
-  outline: none;
-  width: 100%;
+  && {
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: ${({ variant }) => (variant === "outline-primary" ? "#FFF" : "#000")};
+    border: ${({ variant }) =>
+      variant === "outline-primary" ? "1px solid #FFF" : "none"};
+    background: ${({ variant }) =>
+      variant === "outline-primary" ? "transparent" : "#FFC700"};
+    outline: none;
+    width: 100%;
+
+    &:hover {
+      background: ${({ variant }) => (variant === "outline-primary" ? "rgba(255, 255, 255, 0.07)" : "#FFCC17")};
+    }
+
+    &:active {
+      background: ${({ variant }) => (variant === "outline-primary" ? "rgba(255, 255, 255, 0.21)" : "#DEAD00")};
+    }
+
+    &:hover, &:active {
+      border-color: inherit;
+      color: ${({ variant }) => (variant === "outline-primary" ? "#FFF" : "#000")};
+    }
+  }
 `;
 
 export const SectionTextWrapper = styled.div`

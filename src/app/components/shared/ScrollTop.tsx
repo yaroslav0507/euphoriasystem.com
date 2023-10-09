@@ -6,9 +6,14 @@ export const ScrollTopElement = styled.div`
   height: 84px;
   margin: 40px auto;
   border-radius: 100%;
+  cursor: pointer;
   background-image: url(${IconUp});
   background-position: center;
   background-color: rgba(25, 64, 103, 0.79);
+
+  &:hover {
+    background-color: rgba(25, 64, 103, 0.9);
+  } 
 `;
 
 export const ScrollTop = () => {
