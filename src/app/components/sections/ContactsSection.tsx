@@ -55,6 +55,8 @@ const Map = styled.div<{ url: string }>`
   height: 270px;
   width: 100%;
   background: url(${({ url }) => url});
+  background-size: cover;
+  background-position: 0 30%;
 `;
 
 const Legend = styled.div`
