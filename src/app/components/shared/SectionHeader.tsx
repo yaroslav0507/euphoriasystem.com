@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   display: flex;
   text-align: center;
   flex-direction: column;
-  padding: 80px 12px;
+  padding: 80px 0;
 `;
 
 const Subtitle = styled.div`

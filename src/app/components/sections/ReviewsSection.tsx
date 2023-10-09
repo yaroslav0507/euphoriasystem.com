@@ -6,6 +6,8 @@ import RevievSadhguru from '../../img/reviews/review_sadhguru.png';
 import QuoteStart from '../../img/quote_start.svg';
 import QuoteEnd from '../../img/quote_end.svg';
 import styled from 'styled-components';
+import { useTranslation } from "react-i18next";
+import i18next from "../../../i18n";
 
 const Review = styled.div`
   color: #000;
@@ -98,25 +100,8 @@ const ReviewContent = styled.div`
 
 
 export const ReviewsSection = () => {
-  const reviews = [{
-    img: ReviewRajesh,
-    title: 'Sri Rajesh Maharaja',
-    subtitle: 'Mystic / Yogi / Crypto Investor',
-    insta: '@rajeshsadhu',
-    content: 'Sadhu boards from Euphoria System is the best that was with me since my last regeneration on the wheel of Sansara. Will Definitely recommend to my sadhu friends.'
-  }, {
-    img: RevievGandhi,
-    title: 'Mahatma Gandhi',
-    subtitle: 'Mystic / Yogi / Influencer',
-    insta: '@gandiofficial',
-    content: 'You must be the change that you wish to see in the world. Become that change with Sadhu boards from Euphoria System. I wish I could try it, but looks good. I believe Rajesh, though...'
-  }, {
-    img: RevievSadhguru,
-    title: 'Sadhguru',
-    subtitle: 'Mystic / Yogi / Influencer',
-    insta: '@sadhguru.isha',
-    content: 'Unfold your genius with Euphoria System sadhu. Unless you constantly strive to be better, you will become a stagnant pool. Stagnation will ultimately poison your life. '
-  }];
+  const { t } = useTranslation();
+  const reviews = new Array(3).fill(null);
 
   return (
     <>
@@ -131,13 +116,13 @@ export const ReviewsSection = () => {
           {reviews.map((review, index) => (
             <Col key={index} xs="12">
               <Review>
-                <ReviewImg url={review.img} />
+                <ReviewImg url={t(`reviews.items.${index}.img`)} />
 
                 <ReviewContainer>
-                  <ReviewTitle>{review.title}</ReviewTitle>
-                  <ReviewSubtitle>{review.subtitle}</ReviewSubtitle>
-                  <ReviewInsta>{review.insta}</ReviewInsta>
-                  <ReviewContent>{review.content}</ReviewContent>
+                  <ReviewTitle>{t(`reviews.items.${index}.title`)}</ReviewTitle>
+                  <ReviewSubtitle>{t(`reviews.items.${index}.subtitle`)}</ReviewSubtitle>
+                  <ReviewInsta>{t(`reviews.items.${index}.insta`)}</ReviewInsta>
+                  <ReviewContent>{t(`reviews.items.${index}.content`)}</ReviewContent>
                 </ReviewContainer>
               </Review>
             </Col>
