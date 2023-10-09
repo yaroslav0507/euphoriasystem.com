@@ -64,6 +64,24 @@ export default {
           }
         ]
     },
+    contacts: {
+        subtitle: "Contacts",
+        title: "Call/Text us To Purchase",
+        map: "We are Here ",
+        delivery: {
+            title: "Delivery",
+            text: "We ship our boards worldwide except russia and belarus. \nDelivery by Ukraine is done by Nova Poshta provider. \n\nUkr Poshta is used for the delivery to other countries, or you can propose your own way of logistics to our managers."
+        },
+        pricing: {
+            title: "Pricing",
+            text: "Please contact  our managers in order to get the actual price for our sadhu boards."
+        },
+        banner: {
+            title: "Need help choosing the pitch and material of the nails?",
+            text: "Leave a request for a free consultation, and our specialist will easily select the right board for your needs.",
+            button: "Request a callback"
+        }
+    },
     button: {
         order: "Buy Now",
         more: "Learn More"

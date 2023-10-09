@@ -10,6 +10,7 @@ import styled from "styled-components";
 import { SiteButton } from "../shared/common";
 import { SectionBanner } from "../shared/SectionBanner";
 import { ScrollTop } from "../shared/ScrollTop";
+import { useTranslation } from "react-i18next";
 
 const ContactsWrapper = styled.div`
   background: radial-gradient(#14385a, #14385a96, transparent);
@@ -81,6 +82,8 @@ const ImgArrow = styled.img`
 `;
 
 export const ContactsSection = () => {
+  const { t } = useTranslation();
+
   const contacts = [
     {
       icon: IconCall,
@@ -105,8 +108,8 @@ export const ContactsSection = () => {
         <Row>
           <Col xs="12">
             <SectionHeader
-              subtitle="Contacts"
-              title="Call/Text us To Purchase"
+              subtitle={t('contacts.subtitle')}
+              title={t('contacts.title')}
             />
           </Col>
         </Row>
@@ -129,7 +132,7 @@ export const ContactsSection = () => {
           <Col xs="12" className="mb-5">
             <Map url={ImgMap}>
               <Legend>
-                We Are Here
+                {t('contacts.map')}
                 <ImgFlag src={FlagUA} alt="We Are Here" />
                 <ImgArrow src={IconArrow} />
               </Legend>
@@ -137,22 +140,16 @@ export const ContactsSection = () => {
           </Col>
 
           <Col xs="12" className="mb-5">
-            <h4>Delivery</h4>
+            <h4>{t('contacts.delivery.title')}</h4>
 
             <p className="mb-5">
-              We ship our boards worldwide except russia and belarus. Delivery
-              by Ukraine is done by Nova Poshta provider.
-              <br />
-              <br />
-              Ukr Poshta is used for the delivery to other countries, or you can
-              propose your own way of logistics to our managers.
+              {t('contacts.delivery.text')}
             </p>
 
-            <h4>Pricing</h4>
+            <h4>{t('contacts.pricing.title')}</h4>
 
             <p className="mb-5">
-              Please contact our managers in order to get the actual price for
-              our sadhu boards.
+              {t('contacts.pricing.text')}
             </p>
           </Col>
 
@@ -160,12 +157,10 @@ export const ContactsSection = () => {
             <SectionBanner
               bgSize="cover"
               bgPosition="10% 0"
-              title="Ready to purchase or have any Questions?"
-              content={
-                "Request a free consultation to study your case and help you find a right board for your needs."
-              }
+              title={t('contacts.banner.title')}
+              content={t('contacts.banner.text')}
               render={
-                <SiteButton className="mt-5">Request a callback</SiteButton>
+                <SiteButton className="mt-5">{t('contacts.banner.button')}</SiteButton>
               }
             />
           </Col>
