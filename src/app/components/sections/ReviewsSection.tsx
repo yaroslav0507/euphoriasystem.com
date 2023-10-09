@@ -123,18 +123,15 @@ export const ReviewsSection = () => {
       <Container>
         <Row>
           <Col xs="12">
-            <SectionHeader 
-              subtitle="Reviews" 
-              title="What People Say" 
-            />
+            <SectionHeader subtitle="Reviews" title="What People Say" />
           </Col>
         </Row>
-  
-        <Row>
-          { reviews.map((review, index) => (
+
+        <Row className="mb-5">
+          {reviews.map((review, index) => (
             <Col key={index} xs="12">
               <Review>
-                <ReviewImg url={review.img}/>
+                <ReviewImg url={review.img} />
 
                 <ReviewContainer>
                   <ReviewTitle>{review.title}</ReviewTitle>
@@ -148,5 +145,5 @@ export const ReviewsSection = () => {
         </Row>
       </Container>
     </>
-  )
+  );
 };

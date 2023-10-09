@@ -4,7 +4,7 @@ import IconUp from "../../img/icons/icon_up.svg";
 export const ScrollTopElement = styled.div`
   width: 84px;
   height: 84px;
-  margin: auto;
+  margin: 40px auto;
   border-radius: 100%;
   background-image: url(${IconUp});
   background-position: center;

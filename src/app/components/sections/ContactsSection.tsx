@@ -12,7 +12,7 @@ import { SectionBanner } from "../shared/SectionBanner";
 import { ScrollTop } from "../shared/ScrollTop";
 
 const ContactsWrapper = styled.div`
-  background: #14385a;
+  background: radial-gradient(#14385a, #14385a96, transparent);
   padding-bottom: 40px;
 `;
 
@@ -110,7 +110,7 @@ export const ContactsSection = () => {
         </Row>
 
         <Row>
-          <Col xs="12" className="mb-4">
+          <Col xs="12" className="mb-5">
             {contacts.map((contact, index) => (
               <Contact key={index}>
                 <ContactIcon>
@@ -124,7 +124,7 @@ export const ContactsSection = () => {
             ))}
           </Col>
 
-          <Col xs="12" className="mb-4">
+          <Col xs="12" className="mb-5">
             <Map url={ImgMap}>
               <Legend>
                 We Are Here
@@ -134,7 +134,7 @@ export const ContactsSection = () => {
             </Map>
           </Col>
 
-          <Col xs="12">
+          <Col xs="12" className="mb-5">
             <h4>Delivery</h4>
 
             <p className="mb-5">

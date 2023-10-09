@@ -8,11 +8,20 @@ const LocaleBox = styled.div`
   cursor: pointer;
   border-radius: 5px;
   padding: 7px 8px;
-  background: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 
   &:hover {
     background: rgba(255, 255, 255, 0.074);
   }
+`;
+
+const Flag = styled.div<{ url: string }>`
+  width: 32px;
+  height: 18px;
+  border-radius: 2px;
+  background-image: url(${({ url }) => url });
+  background-size: cover;
+  background-position: 0 center;
 `;
 
 type Locale = "en" | "ua";
@@ -26,13 +35,8 @@ export const Locale = () => {
   };
 
   return (
-    <LocaleBox>
-      <img
-        alt="Locale"
-        aria-label="Locale"
-        src={isUA ? UA : EN}
-        onClick={toggleLocale}
-      />
+    <LocaleBox onClick={toggleLocale}>
+      <Flag url={isUA ? UA : EN}/>
     </LocaleBox>
   );
 };

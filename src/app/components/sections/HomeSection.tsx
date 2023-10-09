@@ -8,12 +8,18 @@ const Stage = styled(Row)`
   position: relative;
   flex-flow: column-reverse;
   justify-content: flex-end;
-  height: calc(100svh - 90px);
+  height: calc(100svh - 78px);
   overflow: hidden;
 `;
 
-const ProductImage = styled.img`
+const ProductImage = styled.div<{ url: string }>`
   max-width: 100%;
+  background: url(${({ url }) => url});
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-size: 120%;
+  width: 100%;
+  height: 100%;
 `;
 
 const ProductTitle = styled.div`
@@ -31,8 +37,8 @@ const TextCol = styled(Col)`
   position: absolute;
   padding-bottom: 12px;
   padding-top: 50px;
-  bottom: -1px;
-  background: linear-gradient(0deg, #01152d, #01152d94, transparent);
+  bottom: 0;
+  z-index: 2;
 `;
 
 const ProductBackground = styled.div`
@@ -47,39 +53,53 @@ const ProductBackground = styled.div`
   background-position: 0 20%;
 `;
 
+const HomeWrapper = styled.div`
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 320px;
+    max-height: 50vh;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    z-index: 2;
+    background: linear-gradient(0deg, #01152d, #01152dc7, transparent);
+  }
+`;
+
 export const HomeSection = () => (
-  <Container>
-    <Stage>
-      <TextCol xs="12">
-        <Row>
-          <Col xs="12">
-            <ProductTitle>Sadhu Boards by Euphoria System</ProductTitle>
-          </Col>
+  <HomeWrapper>
+    <Container>
+      <Stage>
+        <TextCol xs="12">
+          <Row>
+            <Col xs="12">
+              <ProductTitle>Sadhu Boards by Euphoria System</ProductTitle>
+            </Col>
 
-          <Col xs="12">
-            <ProductSubTitle>
-              Is Your Key to the New Dimension of Mindfulness
-            </ProductSubTitle>
-          </Col>
+            <Col xs="12">
+              <ProductSubTitle>
+                Is Your Key to the New Dimension of Mindfulness
+              </ProductSubTitle>
+            </Col>
 
-          <Col xs="6">
-            <SiteButton>Buy Now</SiteButton>
-          </Col>
+            <Col xs="6">
+              <SiteButton>Buy Now</SiteButton>
+            </Col>
 
-          <Col xs="6">
-            <SiteButton variant="outline-primary">Learn More</SiteButton>
-          </Col>
-        </Row>
-      </TextCol>
+            <Col xs="6">
+              <SiteButton variant="outline-primary">Learn More</SiteButton>
+            </Col>
+          </Row>
+        </TextCol>
 
-      <Col xs="12">
-        <ProductImage
-          src={HeroImage}
-          alt="Sadhu Nail Boards by Euphoria System"
-        />
-      </Col>
-    </Stage>
+        <Col xs="12">
+          <ProductImage url={HeroImage}/>
+        </Col>
+      </Stage>
 
-    <ProductBackground />
-  </Container>
+      <ProductBackground />
+    </Container>
+  </HomeWrapper>
 );
