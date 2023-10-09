@@ -69,7 +69,7 @@ const ReviewTitle = styled.div`
   }
 
   &:before {
-    top: 70px;
+    top: 50px;
     left: 30px;
     background: url(${QuoteStart});
   }
