@@ -67,7 +67,7 @@ export default {
     contacts: {
         subtitle: "Contacts",
         title: "Call/Text us To Purchase",
-        map: "We are Here ",
+        map: "We are Here",
         delivery: {
             title: "Delivery",
             text: "We ship our boards worldwide except russia and belarus. \nDelivery by Ukraine is done by Nova Poshta provider. \n\nUkr Poshta is used for the delivery to other countries, or you can propose your own way of logistics to our managers."
