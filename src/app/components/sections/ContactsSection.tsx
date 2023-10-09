@@ -7,8 +7,9 @@ import IconArrow from "../../img/icons/icon_arrow.svg";
 import FlagUA from "../../img/langs/ua.svg";
 import ImgMap from "../../img/bg_map.png";
 import styled from "styled-components";
-import { ScrollTop, SiteButton } from "../shared/components";
+import { SiteButton } from "../shared/components";
 import { SectionBanner } from "../shared/SectionBanner";
+import { ScrollTop } from "../shared/ScrollTop";
 
 const ContactsWrapper = styled.div`
   background: #14385a;

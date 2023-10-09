@@ -1,16 +1,5 @@
 import styled from "styled-components";
 import { Button, ButtonProps } from "react-bootstrap";
-import IconUp from "../../img/icons/icon_up.svg";
-
-export const ScrollTop = styled.div`
-  width: 84px;
-  height: 84px;
-  margin: auto;
-  border-radius: 100%;
-  background-image: url(${IconUp});
-  background-position: center;
-  background-color: rgba(25, 64, 103, 0.79);
-`;
 
 export const SiteButton = styled(Button)<ButtonProps>`
   border-radius: 10px;

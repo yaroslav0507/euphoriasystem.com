@@ -8,7 +8,7 @@ const Stage = styled(Row)`
   position: relative;
   flex-flow: column-reverse;
   justify-content: flex-end;
-  height: calc(100dvh - 90px);
+  height: calc(100svh - 90px);
   overflow: hidden;
 `;
 
