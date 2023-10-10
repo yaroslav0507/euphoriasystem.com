@@ -27,8 +27,8 @@ const HeaderControls = styled(HeaderCol) <{
   opacity: ${({ isStatic }) => isStatic ? '1' : '0'};
   position: ${({ isStatic }) => isStatic ? 'initial' : 'fixed'};
   border-radius: 5px;
-  right: 12px;
-  top: 12px;
+  right: 0;
+  top: -100px;
   z-index: 3;
 
   ${({ shouldAnimate }) => shouldAnimate && `
@@ -40,15 +40,15 @@ const HeaderControls = styled(HeaderCol) <{
     background: #ffffff1c;
     width: auto;
     height: 40px;
-    margin: 3px 0;
+    margin: 12px;
     padding: 7px 8px 7px 0;
+    top: 0;
     transform: translateY(-100px);
   `};
 
   ${({ isSticky }) => isSticky && `
     opacity: 1;
     transform: none;
-    margin: 0;
   `}
 `;
 
