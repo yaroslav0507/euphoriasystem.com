@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Locale } from "./Locale";
 import { Menu } from "./Menu";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const HeaderWrapper = styled.div`
   height: 75px;
@@ -70,7 +70,7 @@ export const Header = () => {
   const isisSticky = scrollTop >= window.innerHeight;
   const shouldAnimate = scrollTop >= window.innerHeight / 2;
 
-  return (
+  return useMemo(() => (
     <HeaderWrapper id="home">
       <Container>
         <Row>
@@ -91,5 +91,5 @@ export const Header = () => {
         </Row>
       </Container>
     </HeaderWrapper>
-  );
+  ), [isStatic, isisSticky, shouldAnimate]);
 };
