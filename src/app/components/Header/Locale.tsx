@@ -7,17 +7,17 @@ const LocaleBox = styled.div`
   display: flex;
   cursor: pointer;
   border-radius: 5px;
-  padding: 7px 8px;
-  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px 12px;
+  background-color: rgba(255, 255, 255, 0.075);
 
   &:hover {
-    background: rgba(255, 255, 255, 0.074);
+    background: rgba(255, 255, 255, 0.1);
   }
 `;
 
 const Flag = styled.div<{ url: string }>`
-  width: 32px;
-  height: 18px;
+  width: 36px;
+  height: 20px;
   border-radius: 2px;
   background-image: url(${({ url }) => url });
   background-size: cover;

@@ -4,11 +4,12 @@ import RevievSadhguru from '../img/reviews/review_sadhguru.png';
 
 export default {
     home: {
+        name: "Home",
         title: "Sadhu Boards by Euphoria System",
         subtitle: "Is Your Key to the New Dimension of Mindfulness"
     },
     about: {
-        subtitle: "About",
+        name: "About",
         title: "What is a Sadhu Board",
         description: {
             title: "Sadhu nail boards are acupressure devices for relaxation and recovery",
@@ -20,7 +21,7 @@ export default {
         }
     },
     materials: {
-        subtitle: "Materials",
+        name: "Materials",
         title: "Which materials do we use",
         divider: "And",
         cooper: {
@@ -40,7 +41,7 @@ export default {
         }
     },
     reviews: {
-        subtitle: "Testimonials",
+        name: "Testimonials",
         title: "What People Say",
         items: [
         {
@@ -65,7 +66,7 @@ export default {
         ]
     },
     contacts: {
-        subtitle: "Contacts",
+        name: "Contacts",
         title: "Call/Text us To Purchase",
         map: "We are Here",
         delivery: {
@@ -85,5 +86,12 @@ export default {
     button: {
         order: "Buy Now",
         more: "Learn More"
+    },
+    menu: {
+        home: "Home",
+        about: "About",
+        materials: "Materials",
+        reviews: "Testimonials",
+        contacts: "Contacts",
     }
 }

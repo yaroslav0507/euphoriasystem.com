@@ -4,11 +4,12 @@ import RevievSadhguru from '../img/reviews/review_sadhguru.png';
 
 export default {
     home: {
+        name: "Головна",
         title: "Дошки Садху від Euphoria System",
         subtitle: "Твій Ключ до Нового Виміру Усвідомленості"
     },
     about: {
-        subtitle: "Про те",
+        name: "Про те",
         title: "Що Таке Дошки Садху",
         description: {
             title: "Дошки Садху - це акупрессурний прилад для релаксації та відновлення",
@@ -20,7 +21,7 @@ export default {
         }
     },
     materials: {
-        subtitle: "Матеріали",
+        name: "Матеріали",
         title: "Які матеріали ми використовуємо",
         divider: "А також",
         cooper: {
@@ -40,7 +41,7 @@ export default {
         }
     },
     reviews: {
-        subtitle: "Відгуки",
+        name: "Відгуки",
         title: "Що Кажуть Люди",
         items: [
         {
@@ -65,7 +66,7 @@ export default {
         ]
     },
     contacts: {
-        subtitle: "Контакти",
+        name: "Контакти",
         title: "Зателефонуйте/напишіть нам, щоб замовити",
         map: "Ми тут",
         delivery: {
@@ -85,5 +86,12 @@ export default {
     button: {
         order: "Замовити",
         more: "Детальніше"
+    },
+    menu: {
+        home: "Головна",
+        about: "Про дошки Садху",
+        materials: "Матеріали Цвяхів",
+        reviews: "Відгуки",
+        contacts: "Контакти",
     }
 }

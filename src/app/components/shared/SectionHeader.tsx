@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 interface SectionHeaderProps {
   title: string;
-  subtitle: string;
+  name: string;
 }
 
 const Wrapper = styled.div`
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   padding: 80px 0;
 `;
 
-const Subtitle = styled.div`
+const Name = styled.div`
   font-size: 20px;
   text-transform: uppercase;
 `;
@@ -24,10 +24,10 @@ const Title = styled.div`
   font-weight: 700;
 `;
 
-export const SectionHeader: FC<SectionHeaderProps> = ({ title, subtitle }) => {
+export const SectionHeader: FC<SectionHeaderProps> = ({ title, name }) => {
   return (
     <Wrapper>
-      <Subtitle>{subtitle}</Subtitle>
+      <Name>{name}</Name>
       <Title>{title}</Title>
     </Wrapper>
   );

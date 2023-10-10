@@ -105,11 +105,11 @@ export const ReviewsSection = () => {
 
   return (
     <>
-      <Container>
+      <Container id="reviews">
         <Row>
           <Col xs="12">
             <SectionHeader 
-              subtitle={t('reviews.subtitle')}
+              name={t('reviews.name')}
               title={t('reviews.title')}
             />
           </Col>

@@ -19,11 +19,11 @@ export const MaterialsSection = () => {
 
   return (
     <>
-      <Container>
+      <Container id="marterials">
         <Row>
           <Col xs="12">
             <SectionHeader 
-              subtitle={t('materials.subtitle')} 
+              name={t('materials.name')} 
               title={t('materials.title')} 
             />
           </Col>

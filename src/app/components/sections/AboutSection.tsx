@@ -22,7 +22,7 @@ export const AboutSection = () => {
         <Row>
           <Col xs="12">
             <SectionHeader 
-              subtitle={t('about.subtitle')} 
+              name={t('about.name')} 
               title={t('about.title')}
             />
           </Col>

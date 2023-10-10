@@ -104,11 +104,11 @@ export const ContactsSection = () => {
 
   return (
     <ContactsWrapper>
-      <Container>
+      <Container id="contacts">
         <Row>
           <Col xs="12">
             <SectionHeader
-              subtitle={t('contacts.subtitle')}
+              name={t('contacts.name')}
               title={t('contacts.title')}
             />
           </Col>
