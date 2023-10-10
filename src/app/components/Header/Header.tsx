@@ -21,22 +21,22 @@ const HeaderCol = styled(Col)`
 `;
 
 const HeaderControls = styled(HeaderCol) <{
-  sticky?: boolean;
-  visible?: boolean;
-  animate?: boolean;
+  isSticky?: boolean;
+  isStatic?: boolean;
+  shouldAnimate?: boolean;
 }>`
-  opacity: ${({ visible }) => visible ? '1' : '0'};
-  position: ${({ visible }) => visible ? 'auto' : 'fixed'};
+  opacity: ${({ isStatic }) => isStatic ? '1' : '0'};
+  position: ${({ isStatic }) => isStatic ? 'auto' : 'fixed'};
   border-radius: 5px;
   right: 12px;
   top: 12px;
   z-index: 3;
 
-  ${({ animate }) => animate && `
+  ${({ shouldAnimate }) => shouldAnimate && `
     transition: all .5s ease;
   `}
 
-  ${({ visible }) => !visible && `
+  ${({ isStatic }) => !isStatic && `
     position: fixed;
     background: #ffffff1c;
     width: auto;
@@ -46,16 +46,15 @@ const HeaderControls = styled(HeaderCol) <{
     transform: translateY(-100px);
   `};
 
-  ${({ sticky }) => sticky && `
+  ${({ isSticky }) => isSticky && `
     opacity: 1;
     transform: none;
     margin: 0;
   `}
 `;
 
+
 export const Header = () => {
-  const menuRef = useRef<HTMLDivElement>(null)
-  const isVisible = useIntersectionObserver(menuRef)
   const [scrollTop, setScrollTop] = useState(0);
 
   useEffect(() => {
@@ -67,13 +66,15 @@ export const Header = () => {
     };
   }, []);
 
-  const isSticky = scrollTop >= window.innerHeight;
+  const STATIC_MENU_VISIBILITY_OFFSET = 175;
+  const isStatic = scrollTop <= STATIC_MENU_VISIBILITY_OFFSET;
+  const isisSticky = scrollTop >= window.innerHeight;
   const shouldAnimate = scrollTop >= window.innerHeight / 2;
 
   return (
     <HeaderWrapper id="home">
       <Container>
-        <Row ref={menuRef}>
+        <Row>
           <HeaderCol xs="6">
             <img src={Logo} alt="Logo" />
           </HeaderCol>
@@ -81,9 +82,9 @@ export const Header = () => {
           <HeaderControls
             xs="6"
             justify="flex-end"
-            sticky={isSticky}
-            visible={isVisible}
-            animate={shouldAnimate}
+            isSticky={isisSticky}
+            isStatic={isStatic}
+            shouldAnimate={shouldAnimate}
           >
             <Locale />
             <Menu />

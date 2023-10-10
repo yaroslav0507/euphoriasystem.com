@@ -134,7 +134,10 @@ export const Menu = () => {
 
   return (
     <div ref={ref}>
-      <MenuButtonContainer open={menuOpened} onClick={toggleMenu}>
+      <MenuButtonContainer
+        open={menuOpened}
+        onClick={toggleMenu}
+      >
         <MenuButton open={menuOpened} />
       </MenuButtonContainer>
 
