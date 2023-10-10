@@ -5,8 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Locale } from "./Locale";
 import { Menu } from "./Menu";
-import { useEffect, useRef, useState } from "react";
-import useIntersectionObserver from "../../hooks/useIntersectionObserver";
+import { useEffect, useState } from "react";
 
 const HeaderWrapper = styled.div`
   height: 75px;
@@ -26,7 +25,7 @@ const HeaderControls = styled(HeaderCol) <{
   shouldAnimate?: boolean;
 }>`
   opacity: ${({ isStatic }) => isStatic ? '1' : '0'};
-  position: ${({ isStatic }) => isStatic ? 'auto' : 'fixed'};
+  position: ${({ isStatic }) => isStatic ? 'initial' : 'fixed'};
   border-radius: 5px;
   right: 12px;
   top: 12px;
@@ -66,7 +65,7 @@ export const Header = () => {
     };
   }, []);
 
-  const STATIC_MENU_VISIBILITY_OFFSET = 175;
+  const STATIC_MENU_VISIBILITY_OFFSET = window.innerHeight - 100;
   const isStatic = scrollTop <= STATIC_MENU_VISIBILITY_OFFSET;
   const isisSticky = scrollTop >= window.innerHeight;
   const shouldAnimate = scrollTop >= window.innerHeight / 2;
