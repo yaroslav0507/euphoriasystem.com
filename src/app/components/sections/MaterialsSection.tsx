@@ -19,7 +19,7 @@ export const MaterialsSection = () => {
 
   return (
     <>
-      <Container id="marterials">
+      <Container id="materials">
         <Row>
           <Col xs="12">
             <SectionHeader 

@@ -29,24 +29,22 @@ const HeaderControls = styled.div<{
   display: flex;
   gap: 12px;
   border-radius: 5px;
-  right: 0;
-  top: -100px;
   z-index: 3;
+  position: absolute;
 
   ${({ shouldAnimate }) => shouldAnimate && `
-    transition: all .5s ease;
+    transition: transform .5s ease;
+    transform: translateY(-100%);
   `}
 
-  ${({ isStatic }) => !isStatic ? `
+  ${({ isStatic }) => !isStatic && `
     position: fixed;
     background: #ffffff1c;
     width: auto;
     margin: 12px;
     padding: 0 8px 0 0;
+    right: 0;
     top: 0;
-    transform: translateY(-100px);
-  ` : `
-    
   `};
 
   ${({ isSticky }) => isSticky && `
@@ -76,7 +74,7 @@ export const Header = () => {
     };
   }, []);
 
-  const STATIC_MENU_VISIBILITY_OFFSET = window.innerHeight - 100;
+  const STATIC_MENU_VISIBILITY_OFFSET = window.innerHeight - 1;
   const isStatic = scrollTop <= STATIC_MENU_VISIBILITY_OFFSET;
   const isisSticky = scrollTop >= window.innerHeight;
   const shouldAnimate = scrollTop >= window.innerHeight / 2;

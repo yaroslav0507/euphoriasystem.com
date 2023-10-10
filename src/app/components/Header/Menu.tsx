@@ -2,34 +2,26 @@ import { useState } from "react";
 import styled from "styled-components";
 import { useClickOutside } from "../../hooks/useClickOutside";
 import { useTranslation } from "react-i18next";
-import { createFadeAnimation, createTransformAnimation } from "../shared/animations";
+import { createTransformAnimation } from "../shared/animations";
 
+const Backdrop = styled.div`
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: #0000007d;
+  top: 0;
+  left: 0;
+  z-index: 0;
+`;
 
 const MenuButtonContainer = styled.div<{ open: boolean }>`
-  ${createFadeAnimation('fadeIn', '0', '1')}
-  ${createFadeAnimation('fadeOut', '1', '0')}
-
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
-
-  &:after {
-    content: '';
-    display: block;
-    width: 100vh;
-    height: 100vh;
-    position: fixed;
-    background: #0000007d;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    pointer-events: none;
-    transition: opacity .3s ease;
-    animation: ${({ open }) => open ? 'fadeIn' : 'fadeOut'} .3s forwards;
-  }
 `;
 
 const MenuButton = styled.div<{ open: boolean }>`
@@ -79,18 +71,20 @@ const MenuButton = styled.div<{ open: boolean }>`
 `;
 
 const MenuContainer = styled.div<{ open: boolean }>`
-  ${createTransformAnimation('slideIn', 'translate3d(0, 150%, 0)', 'none')}
-  ${createTransformAnimation('slideOut', 'none', 'translate3d(0, 150%, 0)')}
-
-  background: #02162e;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+  opacity: 1;
   color: #fff;
   width: 100%;
+  display: none;
   position: fixed;
-  left: 0;
-  z-index: 3;
-  opacity: 0;
-  bottom: 0;
-  animation: ${({ open }) => open ? 'slideIn' : 'slideOut'} .3s forwards;
+  background: #02162e;
+
+  ${({ open }) => open && `
+    display: block;
+    transform: none;
+  `}
 
   ul {
     list-style: none;
@@ -129,8 +123,6 @@ export const Menu = () => {
     setMenuOpened(!menuOpened)
   };
 
-  const ref = useClickOutside(() => setMenuOpened(false));
-
   const anchors = [
     {
       name: t('menu.home'),
@@ -155,7 +147,7 @@ export const Menu = () => {
   ];
 
   return (
-    <div ref={ref}>
+    <>
       <MenuButtonContainer
         open={menuOpened}
         onClick={toggleMenu}
@@ -163,6 +155,8 @@ export const Menu = () => {
         <MenuButton className="menu-button" open={menuOpened} />
       </MenuButtonContainer>
 
+      { menuOpened && <Backdrop onClick={() => setMenuOpened(false)}/>}
+      
       <MenuContainer open={menuOpened}>
         <ul className="menu">
           {anchors.map(({ name, link }, idx) => (
@@ -172,6 +166,6 @@ export const Menu = () => {
           ))}
         </ul>
       </MenuContainer>
-    </div>
+    </>
   )
 }
