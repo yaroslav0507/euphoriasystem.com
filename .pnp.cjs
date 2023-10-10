@@ -34,6 +34,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:17.0.45"],\
             ["@types/react", "npm:18.2.25"],\
             ["@types/react-dom", "npm:18.2.11"],\
+            ["animate.css", "npm:4.1.1"],\
             ["bootstrap", "virtual:518c8b568104ccb96618d9cfe7d193b7bdbf64b3dee6f9aebba6413d3fb4a68a3b7a9ba44ba07ea229512623705ad9039ec0a6293bdf78c45ae364ddc37ffda1#npm:5.3.2"],\
             ["gh-pages", "npm:6.0.0"],\
             ["i18next", "npm:23.5.1"],\
@@ -5970,6 +5971,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["animate.css", [\
+        ["npm:4.1.1", {\
+          "packageLocation": "./.yarn/cache/animate.css-npm-4.1.1-5c526dcd84-c7eb915404.zip/node_modules/animate.css/",\
+          "packageDependencies": [\
+            ["animate.css", "npm:4.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["ansi-escapes", [\
         ["npm:4.3.2", {\
           "packageLocation": "./.yarn/cache/ansi-escapes-npm-4.3.2-3ad173702f-93111c4218.zip/node_modules/ansi-escapes/",\
@@ -9368,6 +9378,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:17.0.45"],\
             ["@types/react", "npm:18.2.25"],\
             ["@types/react-dom", "npm:18.2.11"],\
+            ["animate.css", "npm:4.1.1"],\
             ["bootstrap", "virtual:518c8b568104ccb96618d9cfe7d193b7bdbf64b3dee6f9aebba6413d3fb4a68a3b7a9ba44ba07ea229512623705ad9039ec0a6293bdf78c45ae364ddc37ffda1#npm:5.3.2"],\
             ["gh-pages", "npm:6.0.0"],\
             ["i18next", "npm:23.5.1"],\

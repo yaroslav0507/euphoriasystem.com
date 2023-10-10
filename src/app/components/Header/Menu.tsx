@@ -2,27 +2,53 @@ import { useState } from "react";
 import styled from "styled-components";
 import { useClickOutside } from "../../hooks/useClickOutside";
 import { useTranslation } from "react-i18next";
+import { createFadeAnimation, createTransformAnimation } from "../shared/animations";
+
 
 const MenuButtonContainer = styled.div<{ open: boolean }>`
+  ${createFadeAnimation('fadeIn', '0', '1')}
+  ${createFadeAnimation('fadeOut', '1', '0')}
+
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 100vh;
+    height: 100vh;
+    position: fixed;
+    background: #0000007d;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
+    animation: ${({ open }) => open ? 'fadeIn' : 'fadeOut'} .3s forwards;
+  }
 `;
 
 const MenuButton = styled.div<{ open: boolean }>`
+  ${createTransformAnimation('rotateLeft', 'rotate3d(0, 0, 1, 0deg)', 'rotate3d(0, 0, 1, -45deg)')}
+  ${createTransformAnimation('rotateRight', 'rotate3d(0, 0, 1, 0deg)', 'rotate3d(0, 0, 1, 45deg)')}
+
   &,
   &:before,
   &:after {
-    display: block;
+    display: flex;
     background-color: #fff;
-    position: absolute;
-    height: 3px;
+    height: 2px;
     width: 30px;
     transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    -webkit-transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
     border-radius: 2px;
+    position: ${({ open }) => open ? 'absolute' : 'initial'};
+    will-change: animation;
+    backface-visibility: hidden;
   }
 
   &:before {
@@ -42,17 +68,20 @@ const MenuButton = styled.div<{ open: boolean }>`
     
     &:before {
       margin-top: 0px;
-      transform: rotate(405deg);
+      animation: rotateLeft .5s forwards;
     }
 
     &:after {
       margin-top: 0px;
-      transform: rotate(-405deg);
+      animation: rotateRight .5s forwards;
     }
   `}
 `;
 
 const MenuContainer = styled.div<{ open: boolean }>`
+  ${createTransformAnimation('slideIn', 'translate3d(0, 150%, 0)', 'none')}
+  ${createTransformAnimation('slideOut', 'none', 'translate3d(0, 150%, 0)')}
+
   background: #02162e;
   color: #fff;
   width: 100%;
@@ -61,14 +90,7 @@ const MenuContainer = styled.div<{ open: boolean }>`
   z-index: 3;
   opacity: 0;
   bottom: 0;
-  transform: translateY(150%);
-  transition: all .3s ease;
-  box-shadow: 0 -30px 70px #00000094;
-
-  ${({ open }) => open && `
-    opacity: 1;
-    transform: none;
-  `}
+  animation: ${({ open }) => open ? 'slideIn' : 'slideOut'} .3s forwards;
 
   ul {
     list-style: none;
@@ -138,7 +160,7 @@ export const Menu = () => {
         open={menuOpened}
         onClick={toggleMenu}
       >
-        <MenuButton open={menuOpened} />
+        <MenuButton className="menu-button" open={menuOpened} />
       </MenuButtonContainer>
 
       <MenuContainer open={menuOpened}>

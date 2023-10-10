@@ -19,13 +19,15 @@ const HeaderCol = styled(Col)`
   justify-content: ${(props) => props.justify};
 `;
 
-const HeaderControls = styled(HeaderCol) <{
+const HeaderControls = styled.div<{
   isSticky?: boolean;
   isStatic?: boolean;
   shouldAnimate?: boolean;
 }>`
   opacity: ${({ isStatic }) => isStatic ? '1' : '0'};
   position: ${({ isStatic }) => isStatic ? 'initial' : 'fixed'};
+  display: flex;
+  gap: 12px;
   border-radius: 5px;
   right: 0;
   top: -100px;
@@ -35,20 +37,29 @@ const HeaderControls = styled(HeaderCol) <{
     transition: all .5s ease;
   `}
 
-  ${({ isStatic }) => !isStatic && `
+  ${({ isStatic }) => !isStatic ? `
     position: fixed;
     background: #ffffff1c;
     width: auto;
-    height: 40px;
     margin: 12px;
-    padding: 7px 8px 7px 0;
+    padding: 0 8px 0 0;
     top: 0;
     transform: translateY(-100px);
+  ` : `
+    
   `};
 
   ${({ isSticky }) => isSticky && `
     opacity: 1;
     transform: none;
+
+    .menu-button {
+      &,
+      &:before,
+      &:after {
+        position: absolute;
+      }
+    }
   `}
 `;
 
@@ -78,16 +89,19 @@ export const Header = () => {
             <img src={Logo} alt="Logo" />
           </HeaderCol>
 
-          <HeaderControls
+          <HeaderCol
             xs="6"
             justify="flex-end"
-            isSticky={isisSticky}
-            isStatic={isStatic}
-            shouldAnimate={shouldAnimate}
           >
-            <Locale />
-            <Menu />
-          </HeaderControls>
+            <HeaderControls
+              isSticky={isisSticky}
+              isStatic={isStatic}
+              shouldAnimate={shouldAnimate}
+            >
+              <Locale />
+              <Menu />
+            </HeaderControls>
+          </HeaderCol>
         </Row>
       </Container>
     </HeaderWrapper>
