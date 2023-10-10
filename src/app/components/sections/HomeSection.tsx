@@ -18,7 +18,7 @@ const ProductImage = styled.div<{ url: string }>`
   background: url(${({ url }) => url});
   background-position: center 0;
   background-repeat: no-repeat;
-  background-size: 121%;
+  background-size: 100%;
   width: 100%;
   height: 100%;
 `;
