@@ -32,7 +32,7 @@ export const AboutSection = () => {
           </Col>
   
           <Col xs="12" md="6" className="d-flex align-items-center">
-            <SectionTextWrapper>
+            <SectionTextWrapper direction="right">
               <h3>
                 {t('about.description.title')}
               </h3>
@@ -51,7 +51,7 @@ export const AboutSection = () => {
             <SectionBanner
               title={t('about.banner.title')}
               content={t('about.banner.text')}
-              bgSize="200% 100%"
+              bgSize="cover"
             />
           </Col>
         </Row>

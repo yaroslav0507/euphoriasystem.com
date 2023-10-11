@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Button, ButtonProps } from "react-bootstrap";
-import { device } from "./breakpoints";
+import { device, size } from "./breakpoints";
 
 export const SiteButton = styled(Button)<ButtonProps>`
   && {
@@ -18,7 +18,7 @@ export const SiteButton = styled(Button)<ButtonProps>`
     width: 100%;
     max-width: 450px;
     
-    ${device.xs} {
+    ${size.xs} {
       font-size: 18px;
     }
 
@@ -37,14 +37,24 @@ export const SiteButton = styled(Button)<ButtonProps>`
   }
 `;
 
-export const SectionTextWrapper = styled.div`
+const containers = [
+  [size.sm, 540],
+  [size.md, 720],
+  [size.lg, 960],
+  [size.xl, 1140],
+  [size.xxl, 1320],
+];
+
+export const SectionTextWrapper = styled.div<{ direction: 'left' | 'right' }>`
   display: flex;
   flex-direction: column;
   padding: 24px 0;
 
-  ${device.md} {
-    padding: 32px 24px;
-  }
+  ${({ direction }) => containers.map(([size, width]) => `
+    @media (min-width: ${size}) {
+      padding-${direction}: calc((100vw - ${width}px + 12px) / 2);
+    }
+  `)}
 
   button {
     margin: 12px 0;
@@ -56,11 +66,11 @@ export const SectionTextWrapper = styled.div`
 `;
 
 export const ImageSection = styled.div<{ 
-    url: string;
+  url: string;
   direction: 'left' | 'right';
-    bgSize?: string;
-    bgColor?: string;
-    bgPosition?: string;
+  bgSize?: string;
+  bgColor?: string;
+  bgPosition?: string;
  }>`
   width: calc(100% + 24px);
   margin-left: -12px;

@@ -35,13 +35,11 @@ export const MaterialsSection = () => {
             <ImageSection
               url={ BgCooper } 
               direction="left"
-              bgSize="auto 140%"
-              bgPosition="80% 20%"
             />
           </Col>
   
           <Col xs="12" md="6" className="d-flex align-items-center">
-            <SectionTextWrapper>
+            <SectionTextWrapper direction="left">
               <h3>
                 { t('materials.cooper.title') }
               </h3>
@@ -54,7 +52,7 @@ export const MaterialsSection = () => {
             </SectionTextWrapper>
           </Col>
         </SectionRow>
-  
+
         <Row>
           <Col xs="12" className="text-center mb-5">
             <h3>{t('materials.divider')}</h3>
@@ -66,13 +64,11 @@ export const MaterialsSection = () => {
             <ImageSection
               url={ BgAluminium } 
               direction="right"
-              bgSize="auto 120%"
-              bgPosition="35% 50%"
             />
           </Col>
   
           <Col xs="12" md="6" className="d-flex align-items-center">
-            <SectionTextWrapper>
+            <SectionTextWrapper direction="right">
               <h3>
                 { t('materials.aluminium.title') }
               </h3>
@@ -85,7 +81,9 @@ export const MaterialsSection = () => {
             </SectionTextWrapper>  
           </Col>
         </SectionRow>
+      </Container>
 
+      <Container>
         <Row>
           <Col xs="12">
             <SectionBanner
