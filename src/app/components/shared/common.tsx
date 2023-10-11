@@ -96,7 +96,7 @@ export const ImageSection = styled.div<{
       ${({ bgColor }) => bgColor || '#031837'} 100%
     );
 
-    ${device.md} {
+    ${device.sm} {
       ${({ direction }) => direction === 'left' ? `
         left: 0;
       ` : `

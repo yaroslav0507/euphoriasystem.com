@@ -30,15 +30,15 @@ export const MaterialsSection = () => {
       </Container>
   
       <Container fluid>
-        <SectionRow className="flex-md-row-reverse">
-          <Col xs="12" md="6">
+        <SectionRow className="flex-sm-row-reverse">
+          <Col xs="12" sm="6">
             <ImageSection
               url={ BgCooper } 
               direction="left"
             />
           </Col>
   
-          <Col xs="12" md="6" className="d-flex align-items-center">
+          <Col xs="12" sm="6" className="d-flex align-items-center">
             <SectionTextWrapper direction="left">
               <h3>
                 { t('materials.cooper.title') }
@@ -60,14 +60,14 @@ export const MaterialsSection = () => {
         </Row>
   
         <SectionRow className="mb-5">
-          <Col xs="12" md="6">
+          <Col xs="12" sm="6">
             <ImageSection
               url={ BgAluminium } 
               direction="right"
             />
           </Col>
   
-          <Col xs="12" md="6" className="d-flex align-items-center">
+          <Col xs="12" sm="6" className="d-flex align-items-center">
             <SectionTextWrapper direction="right">
               <h3>
                 { t('materials.aluminium.title') }
