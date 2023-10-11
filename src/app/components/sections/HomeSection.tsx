@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import HeroImage from "../../img/hero_image_euphoria_sadhu.png";
 import BgHome from "../../img/bg_home.svg";
 import styled from "styled-components";
+import { device, size } from "../shared/breakpoints";
 
 const Stage = styled(Row)`
   position: relative;
@@ -11,6 +12,11 @@ const Stage = styled(Row)`
   justify-content: flex-end;
   height: calc(100svh - 78px);
   overflow: hidden;
+
+  @media ${device.md} { 
+    flex-flow: row;
+    align-items: center;
+  }
 `;
 
 const ProductImage = styled.div<{ url: string }>`
@@ -21,6 +27,10 @@ const ProductImage = styled.div<{ url: string }>`
   background-size: 100%;
   width: 100%;
   height: 100%;
+
+  @media ${device.md} and (min-height: ${size.lg}) { 
+    background-position: center;
+  }
 `;
 
 const ProductTitle = styled.div`
@@ -40,6 +50,10 @@ const TextCol = styled(Col)`
   padding-top: 50px;
   bottom: 0;
   z-index: 2;
+
+  @media ${device.md} { 
+    position: initial;
+  }
 `;
 
 const ProductBackground = styled.div`
@@ -69,6 +83,11 @@ const HomeWrapper = styled.div`
   }
 `;
 
+const ProductCol = styled(Col)`
+  flex-grow: 1;
+  height: 100%;
+`;
+
 export const HomeSection = () => {
   const { t } = useTranslation();
 
@@ -76,7 +95,7 @@ export const HomeSection = () => {
     <HomeWrapper>
       <Container>
         <Stage>
-          <TextCol xs="12">
+          <TextCol xs="12" md="6" lg="5">
             <Row>
               <Col xs="12">
                 <ProductTitle>
@@ -100,9 +119,9 @@ export const HomeSection = () => {
             </Row>
           </TextCol>
   
-          <Col xs="12" className="flex-grow-1">
+          <ProductCol xs="12" md="6" lg="7">
             <ProductImage url={HeroImage}/>
-          </Col>
+          </ProductCol>
         </Stage>
   
         <ProductBackground />
