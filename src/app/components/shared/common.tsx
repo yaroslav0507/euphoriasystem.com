@@ -18,7 +18,7 @@ export const SiteButton = styled(Button)<ButtonProps>`
     width: 100%;
     max-width: 450px;
     
-    ${size.xs} {
+    ${device.xs} {
       font-size: 18px;
     }
 

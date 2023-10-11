@@ -169,6 +169,7 @@ export const ContactsSection = () => {
               title={t('contacts.banner.title')}
               content={t('contacts.banner.text')}
               buttonText={t('contacts.banner.button')}
+              buttonLink="#contacts"
             />
           </Col>
 

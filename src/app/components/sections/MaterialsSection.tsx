@@ -48,7 +48,7 @@ export const MaterialsSection = () => {
                 {t('materials.cooper.text')}
               </p>
 
-              <SiteButton>{t('materials.cooper.button')}</SiteButton>
+              <SiteButton href="#contacts">{t('materials.cooper.button')}</SiteButton>
             </SectionTextWrapper>
           </Col>
         </SectionRow>
@@ -77,7 +77,7 @@ export const MaterialsSection = () => {
                 {t('materials.aluminium.text')}
               </p>
 
-              <SiteButton>{t('materials.aluminium.button')}</SiteButton>
+              <SiteButton href="#contacts">{t('materials.aluminium.button')}</SiteButton>
             </SectionTextWrapper>  
           </Col>
         </SectionRow>
@@ -92,6 +92,7 @@ export const MaterialsSection = () => {
               title={t('materials.guide.title')}
               content={t('materials.guide.text')}
               buttonText={t('materials.guide.button')}
+              buttonLink="#contacts"
             />
           </Col>
         </Row>

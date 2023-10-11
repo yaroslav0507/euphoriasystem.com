@@ -79,8 +79,8 @@ export default {
         },
         banner: {
             title: "Need help choosing the pitch and material of the nails?",
-            text: "Leave a request for a free consultation, and our specialist will easily select the right board for your needs.",
-            button: "Request a callback"
+            text: "Contact us in any convenient way for you and our specialist will easily select the right board for your needs.",
+            button: "Contact us"
         }
     },
     button: {

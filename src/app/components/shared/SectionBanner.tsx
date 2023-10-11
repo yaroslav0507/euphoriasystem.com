@@ -13,6 +13,7 @@ interface SectionBannerProps extends BackgroundProps {
   title: string;
   content: string;
   buttonText?: string;
+  buttonLink?: string;
 }
 
 const Wrapper = styled.div<BackgroundProps>`
@@ -75,6 +76,7 @@ export const SectionBanner: FC<SectionBannerProps> = ({
   title, 
   content,
   buttonText,
+  buttonLink,
   ...bgProps
  }) => {
   return (
@@ -84,7 +86,7 @@ export const SectionBanner: FC<SectionBannerProps> = ({
       <Container>
         <Content>{content}</Content>
 
-        {buttonText && <SiteButton>{buttonText}</SiteButton>}
+        {buttonText && <SiteButton href={buttonLink}>{buttonText}</SiteButton>}
       </Container>
     </Wrapper>
   );

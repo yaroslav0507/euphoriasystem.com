@@ -134,7 +134,7 @@ export const HomeSection = () => {
               </Col>
   
               <Col xs="6">
-                <SiteButton href="#order">{t('button.order')}</SiteButton>
+                <SiteButton href="#contacts">{t('button.order')}</SiteButton>
               </Col>
   
               <Col xs="6">
