@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Button, ButtonProps } from "react-bootstrap";
+import { device } from "./breakpoints";
 
 export const SiteButton = styled(Button)<ButtonProps>`
   && {
@@ -67,5 +68,13 @@ export const ImageSection = styled.div<{
       ${({ bgColor }) => bgColor || '#031837'} 50%,
       ${({ bgColor }) => bgColor || '#031837'} 100%
     );
+
+    @media ${device.md} {
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 10%;
+      transform: scaleX(-1);
+    }
   }
 `;
