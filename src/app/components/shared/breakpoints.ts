@@ -1,5 +1,5 @@
 export const size = {
-    xs: '0',
+    xs: '360px',
     sm: '576px',
     md:	'768px',
     lg:	'992px',
@@ -8,10 +8,10 @@ export const size = {
 }
 
 export const device = {
-    xs: `(min-width: ${size.xs})`,
-    sm: `(min-width: ${size.sm})`,
-    md: `(min-width: ${size.md})`,
-    lg: `(min-width: ${size.lg})`,
-    xl: `(min-width: ${size.xl})`,
-    xxl: `(min-width: ${size.xxl})`,
+    xs: `@media (min-width: ${size.xs})`,
+    sm: `@media (min-width: ${size.sm})`,
+    md: `@media (min-width: ${size.md})`,
+    lg: `@media (min-width: ${size.lg})`,
+    xl: `@media (min-width: ${size.xl})`,
+    xxl: `@media (min-width: ${size.xxl})`,
 };

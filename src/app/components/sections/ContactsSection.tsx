@@ -11,6 +11,7 @@ import { SiteButton } from "../shared/common";
 import { SectionBanner } from "../shared/SectionBanner";
 import { ScrollTop } from "../shared/ScrollTop";
 import { useTranslation } from "react-i18next";
+import { device } from "../shared/breakpoints";
 
 const ContactsWrapper = styled.div`
   background: radial-gradient(#14385a, #14385a96, transparent);
@@ -36,10 +37,14 @@ const Contact = styled.div`
   align-items: center;
   gap: 18px;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 14px;
   border-radius: 15px;
   background: rgba(0, 15, 30, 0.75);
   margin-bottom: 32px;
+
+  ${device.xs} {
+    font-size: 20px;
+  }
 
   a {
     color: #fff;

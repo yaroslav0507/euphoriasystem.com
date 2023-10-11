@@ -18,7 +18,7 @@ interface SectionBannerProps extends BackgroundProps {
 const Wrapper = styled.div<BackgroundProps>`
   display: flex;
   flex-direction: column;
-  padding: 32px;
+  padding: 24px;
   overflow: hidden;
   position: relative;
   background: url(${bg});
@@ -27,6 +27,10 @@ const Wrapper = styled.div<BackgroundProps>`
   background-size: ${({ bgSize }) => bgSize || '200%' };
   background-position: ${({ bgPosition }) => bgPosition || '60% 0' };
   
+  ${device.xs} {
+    padding: 32px;
+  }
+
   * {
     z-index: 1;
   }
@@ -49,8 +53,12 @@ const Title = styled.h3`
 `;
 
 const Content = styled.div`
-  font-size: 20px;
+  font-size: 16px;
   white-space: pre-line;
+
+  ${device.xs} {
+    font-size: 20px;
+  }
 `;
 
 const Container = styled.div`
@@ -58,7 +66,7 @@ const Container = styled.div`
     margin-top: 24px;
   }
 
-  @media ${device.md} {
+  ${device.md} {
     flex-direction: column;
   }
 `;

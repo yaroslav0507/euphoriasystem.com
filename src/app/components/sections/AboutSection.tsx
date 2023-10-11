@@ -51,6 +51,7 @@ export const AboutSection = () => {
             <SectionBanner
               title={t('about.banner.title')}
               content={t('about.banner.text')}
+              bgSize="200% 100%"
             />
           </Col>
         </Row>

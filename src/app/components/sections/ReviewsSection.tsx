@@ -8,6 +8,7 @@ import QuoteEnd from '../../img/quote_end.svg';
 import styled from 'styled-components';
 import { useTranslation } from "react-i18next";
 import i18next from "../../../i18n";
+import { device } from "../shared/breakpoints";
 
 const Review = styled.div`
   color: #000;
@@ -93,9 +94,14 @@ const ReviewInsta = styled(ReviewSubtitle)`
 
 const ReviewContent = styled.div`
   font-weight: 300;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 20px;
   text-align: left;
+
+  ${device.xs} {
+    font-size: 18px;
+    line-height: 24px;
+  }
 `;
 
 

@@ -6,7 +6,7 @@ export const SiteButton = styled(Button)<ButtonProps>`
   && {
     border-radius: 10px;
     padding: 12px;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
     color: ${({ variant }) => (variant === "outline-primary" ? "#FFF" : "#000")};
@@ -18,6 +18,10 @@ export const SiteButton = styled(Button)<ButtonProps>`
     width: 100%;
     max-width: 450px;
     
+    ${device.xs} {
+      font-size: 18px;
+    }
+
     &:hover {
       background: ${({ variant }) => (variant === "outline-primary" ? "rgba(255, 255, 255, 0.07)" : "#FFCC17")};
     }
@@ -38,14 +42,14 @@ export const SectionTextWrapper = styled.div`
   flex-direction: column;
   padding: 24px 0;
 
-  @media ${device.md} {
+  ${device.md} {
     padding: 32px 24px;
   }
 
   button {
     margin: 12px 0;
 
-    @media ${device.md} {
+    ${device.md} {
       margin: 24px 0 12px;
     }
   }
@@ -82,7 +86,7 @@ export const ImageSection = styled.div<{
       ${({ bgColor }) => bgColor || '#031837'} 100%
     );
 
-    @media ${device.md} {
+    ${device.md} {
       ${({ direction }) => direction === 'left' ? `
         left: 0;
       ` : `

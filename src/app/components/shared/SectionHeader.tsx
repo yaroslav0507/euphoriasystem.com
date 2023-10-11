@@ -1,5 +1,6 @@
 import { FC } from "react";
 import styled from "styled-components";
+import { device } from "./breakpoints";
 
 interface SectionHeaderProps {
   title: string;
@@ -20,8 +21,12 @@ const Name = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 42px;
+  font-size: 32px;
   font-weight: 700;
+
+  ${device.xs} {
+    font-size: 42px;
+  }
 `;
 
 export const SectionHeader: FC<SectionHeaderProps> = ({ title, name }) => {

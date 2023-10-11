@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 import { Locale } from "./Locale";
 import { Menu } from "./Menu";
 import { useEffect, useMemo, useState } from "react";
+import { device } from "../shared/breakpoints";
 
 const HeaderWrapper = styled.div`
   height: 75px;
@@ -27,7 +28,6 @@ const HeaderControls = styled.div<{
   opacity: ${({ isStatic }) => isStatic ? '1' : '0'};
   position: ${({ isStatic }) => isStatic ? 'initial' : 'fixed'};
   display: flex;
-  gap: 12px;
   border-radius: 5px;
   z-index: 3;
   position: absolute;
@@ -59,6 +59,10 @@ const HeaderControls = styled.div<{
       }
     }
   `}
+
+  ${device.xs} {
+    gap: 12px;
+  }
 `;
 
 

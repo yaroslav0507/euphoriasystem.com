@@ -10,10 +10,11 @@ const Stage = styled(Row)`
   position: relative;
   flex-flow: column-reverse;
   justify-content: flex-end;
+  min-height: 250px;
   height: calc(100svh - 78px);
   overflow: hidden;
 
-  @media ${device.md} { 
+  ${device.md} { 
     flex-flow: row;
     align-items: center;
   }
@@ -28,21 +29,37 @@ const ProductImage = styled.div<{ url: string }>`
   width: 100%;
   height: 100%;
 
-  @media ${device.md} and (min-height: ${size.lg}) { 
+  ${device.xs} and (min-height: ${size.md}) { 
     background-position: center;
+  }
+
+  ${device.md} and (min-height: ${size.md}){ 
+    background-position: center;
+  }
+
+  ${device.lg} { 
+    background-position: center 0;
   }
 `;
 
 const ProductTitle = styled.div`
-  font-size: 38px;
+  font-size: 32px;
   font-weight: 700;
   white-space: pre-line;
+
+  ${device.xs} {
+    font-size: 38px;
+  }
 `;
 
 const ProductSubTitle = styled.div`
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 300;
   margin-bottom: 24px;
+
+  ${device.xs} {
+    font-size: 24px;
+  }
 `;
 
 const TextCol = styled(Col)`
@@ -52,7 +69,7 @@ const TextCol = styled(Col)`
   bottom: 0;
   z-index: 2;
 
-  @media ${device.md} { 
+  ${device.md} { 
     position: initial;
   }
 `;
@@ -61,15 +78,17 @@ const ProductBackground = styled.div`
   position: absolute;
   z-index: -1;
   width: 100%;
-  height: 100%;
+  height: calc(100% + 100px);
   left: 0;
-  top: 0;
+  top: -100px;
   background: url(${BgHome});
   background-size: cover;
   background-position: 0 20%;
 `;
 
 const HomeWrapper = styled.div`
+  position: relative;
+
   &:before {
     content: '';
     display: block;
@@ -96,7 +115,7 @@ export const HomeSection = () => {
     <HomeWrapper>
       <Container>
         <Stage>
-          <TextCol xs="12" md="6" lg="5">
+          <TextCol xs="12" md="7" lg="6" xl="5">
             <Row>
               <Col xs="12">
                 <ProductTitle>
@@ -120,7 +139,7 @@ export const HomeSection = () => {
             </Row>
           </TextCol>
   
-          <ProductCol xs="12" md="6" lg="7">
+          <ProductCol xs="12" md="5" lg="6" xl="7">
             <ProductImage url={HeroImage}/>
           </ProductCol>
         </Stage>
