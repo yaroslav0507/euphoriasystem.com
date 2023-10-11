@@ -38,8 +38,8 @@ export const SiteButton = styled(Button)<ButtonProps>`
 `;
 
 const containers = [
-  [size.sm, 540],
-  [size.md, 720],
+  // [size.sm, 540],
+  // [size.md, 720],
   [size.lg, 960],
   [size.xl, 1140],
   [size.xxl, 1320],
@@ -96,11 +96,11 @@ export const ImageSection = styled.div<{
       ${({ bgColor }) => bgColor || '#031837'} 100%
     );
 
-    ${device.sm} {
+    ${device.md} {
       ${({ direction }) => direction === 'left' ? `
-        left: 0;
+        left: -1px;
       ` : `
-        right: 0;
+        right: -1px;
       `}
 
       top: 0;
