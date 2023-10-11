@@ -48,7 +48,7 @@ const containers = [
 export const SectionTextWrapper = styled.div<{ direction: 'left' | 'right' }>`
   display: flex;
   flex-direction: column;
-  padding: 24px 0;
+  padding: 24px;
 
   ${({ direction }) => containers.map(([size, width]) => `
     @media (min-width: ${size}) {
@@ -81,7 +81,23 @@ export const ImageSection = styled.div<{
   background-position: ${({ bgPosition }) => bgPosition || 'center' };
   position: relative;
 
-  &:after {
+  &&:before {
+    top: 0;
+    transform: scale(-1);
+    background: linear-gradient(
+      to bottom ${({ direction }) => direction || 'left'},
+      transparent 0%,
+      transparent 50%,
+      #01162d 50%,
+      #01162d 100%
+    );
+
+    ${device.md} {
+      display: none;
+    }
+  }
+
+  &:after, &:before {
     content: "";
     bottom: -1px;
     width: 100%;

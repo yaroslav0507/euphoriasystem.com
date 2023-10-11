@@ -119,7 +119,13 @@ export const HomeSection = () => {
     <HomeWrapper>
       <Container>
         <Stage>
-          <TextCol xs="12" sm="7" lg="6" xl="5">
+          <TextCol 
+            xs="12"
+            sm="7" 
+            lg="6" 
+            xl="5"
+            className="animate__animated animate__fadeInUp"
+          >
             <Row>
               <Col xs="12">
                 <ProductTitle>
@@ -144,7 +150,10 @@ export const HomeSection = () => {
           </TextCol>
   
           <ProductCol xs="12" sm="5" lg="6" xl="7">
-            <ProductImage url={HeroImage}/>
+            <ProductImage 
+              url={HeroImage}
+              className="animate__animated animate__slideInUp"
+            />
           </ProductCol>
         </Stage>
   
