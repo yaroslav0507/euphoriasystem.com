@@ -1,6 +1,8 @@
 import { FC } from "react";
 import styled from "styled-components";
 import bg from "../../img/bg_banner.jpeg";
+import { device } from "./breakpoints";
+import { SiteButton } from "./common";
 
 interface BackgroundProps {
   bgSize?: string;
@@ -10,7 +12,7 @@ interface BackgroundProps {
 interface SectionBannerProps extends BackgroundProps {
   title: string;
   content: string;
-  render?: JSX.Element;
+  buttonText?: string;
 }
 
 const Wrapper = styled.div<BackgroundProps>`
@@ -51,19 +53,31 @@ const Content = styled.div`
   white-space: pre-line;
 `;
 
+const Container = styled.div`
+  ${SiteButton} {
+    margin-top: 24px;
+  }
+
+  @media ${device.md} {
+    flex-direction: column;
+  }
+`;
+
 export const SectionBanner: FC<SectionBannerProps> = ({ 
   title, 
   content,
-  render,
+  buttonText,
   ...bgProps
  }) => {
   return (
     <Wrapper {...bgProps}>
       <Title>{title}</Title>
 
-      <Content>{content}</Content>
-      
-      { render }
+      <Container>
+        <Content>{content}</Content>
+
+        {buttonText && <SiteButton>{buttonText}</SiteButton>}
+      </Container>
     </Wrapper>
   );
 };

@@ -16,7 +16,8 @@ export const SiteButton = styled(Button)<ButtonProps>`
       variant === "outline-primary" ? "transparent" : "#FFC700"};
     outline: none;
     width: 100%;
-
+    max-width: 450px;
+    
     &:hover {
       background: ${({ variant }) => (variant === "outline-primary" ? "rgba(255, 255, 255, 0.07)" : "#FFCC17")};
     }
@@ -42,7 +43,11 @@ export const SectionTextWrapper = styled.div`
   }
 
   button {
-    margin-top: 12px;
+    margin: 12px 0;
+
+    @media ${device.md} {
+      margin: 24px 0 12px;
+    }
   }
 `;
 

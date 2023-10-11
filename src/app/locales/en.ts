@@ -5,7 +5,7 @@ import RevievSadhguru from '../img/reviews/review_sadhguru.png';
 export default {
     home: {
         name: "Home",
-        title: "Sadhu Boards by Euphoria System",
+        title: "Sadhu Boards \nby Euphoria System",
         subtitle: "Is Your Key to the New Dimension of Mindfulness"
     },
     about: {
@@ -71,7 +71,7 @@ export default {
         map: "We are Here",
         delivery: {
             title: "Delivery",
-            text: "We ship our boards worldwide except russia and belarus. \nDelivery by Ukraine is done by Nova Poshta provider. \n\nUkr Poshta is used for the delivery to other countries, or you can propose your own way of logistics to our managers."
+            text: "We ship our boards worldwide except russia and belarus. \nDelivery by Ukraine is done by Nova Poshta provider."
         },
         pricing: {
             title: "Pricing",

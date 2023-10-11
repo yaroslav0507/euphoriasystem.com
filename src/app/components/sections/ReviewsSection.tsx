@@ -64,8 +64,8 @@ const ReviewTitle = styled.div`
   &:before, &:after {
     content: '';
     position: absolute;
-    width: 35px;
-    height: 35px;
+    width: 36px;
+    height: 36px;
   }
 
   &:before {

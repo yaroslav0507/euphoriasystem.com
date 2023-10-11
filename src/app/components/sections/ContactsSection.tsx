@@ -15,6 +15,10 @@ import { useTranslation } from "react-i18next";
 const ContactsWrapper = styled.div`
   background: radial-gradient(#14385a, #14385a96, transparent);
   padding-bottom: 40px;
+
+  h4 {
+    margin-bottom: 12px;
+  }
 `;
 
 const ContactIcon = styled.div`
@@ -115,7 +119,7 @@ export const ContactsSection = () => {
         </Row>
 
         <Row>
-          <Col xs="12" className="mb-5">
+          <Col xs="12" md="6" xl="4" className="mb-5">
             {contacts.map((contact, index) => (
               <Contact key={index}>
                 <ContactIcon>
@@ -129,7 +133,7 @@ export const ContactsSection = () => {
             ))}
           </Col>
 
-          <Col xs="12" className="mb-5">
+          <Col xs="12" md="6" xl="4" className="mb-5">
             <Map url={ImgMap}>
               <Legend>
                 {t('contacts.map')}
@@ -139,16 +143,16 @@ export const ContactsSection = () => {
             </Map>
           </Col>
 
-          <Col xs="12" className="mb-5">
+          <Col xs="12" md="12" xl="4" className="mb-5">
             <h4>{t('contacts.delivery.title')}</h4>
 
-            <p className="mb-5">
+            <p>
               {t('contacts.delivery.text')}
             </p>
 
             <h4>{t('contacts.pricing.title')}</h4>
 
-            <p className="mb-5">
+            <p>
               {t('contacts.pricing.text')}
             </p>
           </Col>
@@ -159,9 +163,7 @@ export const ContactsSection = () => {
               bgPosition="10% 0"
               title={t('contacts.banner.title')}
               content={t('contacts.banner.text')}
-              render={
-                <SiteButton className="mt-5">{t('contacts.banner.button')}</SiteButton>
-              }
+              buttonText={t('contacts.banner.button')}
             />
           </Col>
 

@@ -31,7 +31,7 @@ export const AboutSection = () => {
             />
           </Col>
   
-          <Col xs="12" md="6">
+          <Col xs="12" md="6" className="d-flex align-items-center">
             <SectionTextWrapper>
               <h3>
                 {t('about.description.title')}

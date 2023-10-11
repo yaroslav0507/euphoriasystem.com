@@ -36,6 +36,7 @@ const ProductImage = styled.div<{ url: string }>`
 const ProductTitle = styled.div`
   font-size: 38px;
   font-weight: 700;
+  white-space: pre-line;
 `;
 
 const ProductSubTitle = styled.div`

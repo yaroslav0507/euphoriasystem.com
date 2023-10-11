@@ -40,7 +40,7 @@ export const MaterialsSection = () => {
             />
           </Col>
   
-          <Col xs="12" md="6">
+          <Col xs="12" md="6" className="d-flex align-items-center">
             <SectionTextWrapper>
               <h3>
                 { t('materials.cooper.title') }
@@ -71,7 +71,7 @@ export const MaterialsSection = () => {
             />
           </Col>
   
-          <Col xs="12" md="6">
+          <Col xs="12" md="6" className="d-flex align-items-center">
             <SectionTextWrapper>
               <h3>
                 { t('materials.aluminium.title') }
@@ -93,7 +93,7 @@ export const MaterialsSection = () => {
               bgPosition="10% 0"
               title={t('materials.guide.title')}
               content={t('materials.guide.text')}
-              render={<SiteButton className="mt-5">{t('materials.guide.button')}</SiteButton>}
+              buttonText={t('materials.guide.button')}
             />
           </Col>
         </Row>
