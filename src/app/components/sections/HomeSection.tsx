@@ -10,11 +10,11 @@ const Stage = styled(Row)`
   position: relative;
   flex-flow: column-reverse;
   justify-content: flex-end;
-  min-height: 250px;
+  min-height: 270px;
   height: calc(100svh - 78px);
   overflow: hidden;
 
-  ${device.md} { 
+  ${device.sm} { 
     flex-flow: row;
     align-items: center;
   }
@@ -33,7 +33,7 @@ const ProductImage = styled.div<{ url: string }>`
     background-position: center;
   }
 
-  ${device.md} and (min-height: ${size.md}){ 
+  ${device.sm} and (min-height: ${size.md}){ 
     background-position: center;
   }
 
@@ -46,8 +46,9 @@ const ProductTitle = styled.div`
   font-size: 32px;
   font-weight: 700;
   white-space: pre-line;
+  min-width: 320px;
 
-  ${device.xs} {
+  ${device.xs} and (min-height: ${size.sm}) {
     font-size: 38px;
   }
 `;
@@ -65,11 +66,14 @@ const ProductSubTitle = styled.div`
 const TextCol = styled(Col)`
   position: absolute;
   padding-bottom: 3%;
-  padding-top: 50px;
   bottom: 0;
   z-index: 2;
 
-  ${device.md} { 
+  ${device.xs} and (min-height: ${size.sm}) {
+    padding-top: 50px;
+  }
+
+  ${device.sm} { 
     position: initial;
   }
 `;
@@ -115,7 +119,7 @@ export const HomeSection = () => {
     <HomeWrapper>
       <Container>
         <Stage>
-          <TextCol xs="12" md="7" lg="6" xl="5">
+          <TextCol xs="12" sm="7" lg="6" xl="5">
             <Row>
               <Col xs="12">
                 <ProductTitle>
@@ -139,7 +143,7 @@ export const HomeSection = () => {
             </Row>
           </TextCol>
   
-          <ProductCol xs="12" md="5" lg="6" xl="7">
+          <ProductCol xs="12" sm="5" lg="6" xl="7">
             <ProductImage url={HeroImage}/>
           </ProductCol>
         </Stage>
