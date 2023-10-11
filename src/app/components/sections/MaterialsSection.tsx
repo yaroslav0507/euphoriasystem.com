@@ -10,8 +10,7 @@ import { useTranslation } from "react-i18next";
 
 const SectionRow = styled(Row)`
   background: #031837;
-  padding-bottom: 84px;
-  margin-bottom: 48px;
+  margin-bottom: 80px;
 `;
 
 export const MaterialsSection = () => {
@@ -31,17 +30,17 @@ export const MaterialsSection = () => {
       </Container>
   
       <Container fluid>
-        <SectionRow>
-          <Col xs="12">
+        <SectionRow className="flex-md-row-reverse">
+          <Col xs="12" md="6">
             <ImageSection
               url={ BgCooper } 
-              direction="right"
+              direction="left"
               bgSize="auto 140%"
               bgPosition="80% 20%"
             />
           </Col>
   
-          <Col xs="12">
+          <Col xs="12" md="6">
             <SectionTextWrapper>
               <h3>
                 { t('materials.cooper.title') }
@@ -50,29 +49,29 @@ export const MaterialsSection = () => {
               <p>
                 {t('materials.cooper.text')}
               </p>
+
+              <SiteButton>{t('materials.cooper.button')}</SiteButton>
             </SectionTextWrapper>
-  
-            <SiteButton>{t('materials.cooper.button')}</SiteButton>
           </Col>
         </SectionRow>
   
         <Row>
-          <Col xs="12" className="text-center mb-4">
+          <Col xs="12" className="text-center mb-5">
             <h3>{t('materials.divider')}</h3>
           </Col>
         </Row>
   
-        <SectionRow>
-          <Col xs="12">
+        <SectionRow className="mb-5">
+          <Col xs="12" md="6">
             <ImageSection
               url={ BgAluminium } 
-              direction="left"
+              direction="right"
               bgSize="auto 120%"
               bgPosition="35% 50%"
             />
           </Col>
   
-          <Col xs="12" className="mb-5">
+          <Col xs="12" md="6">
             <SectionTextWrapper>
               <h3>
                 { t('materials.aluminium.title') }
@@ -81,11 +80,13 @@ export const MaterialsSection = () => {
               <p>
                 {t('materials.aluminium.text')}
               </p>
-            </SectionTextWrapper>
-  
-            <SiteButton>{t('materials.aluminium.button')}</SiteButton>
+
+              <SiteButton>{t('materials.aluminium.button')}</SiteButton>
+            </SectionTextWrapper>  
           </Col>
-  
+        </SectionRow>
+
+        <Row>
           <Col xs="12">
             <SectionBanner
               bgSize="cover"
@@ -95,7 +96,7 @@ export const MaterialsSection = () => {
               render={<SiteButton className="mt-5">{t('materials.guide.button')}</SiteButton>}
             />
           </Col>
-        </SectionRow>
+        </Row>
       </Container>
     </>
   )

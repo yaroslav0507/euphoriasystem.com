@@ -2,21 +2,8 @@ import { Col, Container, Row } from "react-bootstrap";
 import { SectionHeader } from "../shared/SectionHeader";
 import AboutImage from "../../img/about_section_image.jpg";
 import { SectionBanner } from "../shared/SectionBanner";
-import styled from "styled-components";
-import { ImageSection } from "../shared/common";
+import { ImageSection, SectionTextWrapper } from "../shared/common";
 import { useTranslation } from "react-i18next";
-import { device } from "../shared/breakpoints";
-
-const AboutTextWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 24px 0;
-
-  @media ${device.md} {
-    padding: 24px;
-  }
-`;
 
 export const AboutSection = () => {
   const {t} = useTranslation();
@@ -38,13 +25,14 @@ export const AboutSection = () => {
         <Row className="mb-5">
           <Col xs="12" md="6">
             <ImageSection
+              direction="right"
               bgColor="#01162d"
               url={ AboutImage }
             />
           </Col>
   
           <Col xs="12" md="6">
-            <AboutTextWrapper>
+            <SectionTextWrapper>
               <h3>
                 {t('about.description.title')}
               </h3>
@@ -52,7 +40,7 @@ export const AboutSection = () => {
               <p>
                 {t('about.description.text')}
               </p>
-            </AboutTextWrapper>
+            </SectionTextWrapper>
           </Col>
         </Row>
       </Container>

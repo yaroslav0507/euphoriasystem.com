@@ -36,11 +36,19 @@ export const SectionTextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 24px 0;
+
+  @media ${device.md} {
+    padding: 32px 24px;
+  }
+
+  button {
+    margin-top: 12px;
+  }
 `;
 
 export const ImageSection = styled.div<{ 
     url: string;
-    direction?: 'left' | 'right';
+  direction: 'left' | 'right';
     bgSize?: string;
     bgColor?: string;
     bgPosition?: string;
@@ -70,11 +78,16 @@ export const ImageSection = styled.div<{
     );
 
     @media ${device.md} {
+      ${({ direction }) => direction === 'left' ? `
+        left: 0;
+      ` : `
+        right: 0;
+      `}
+
       top: 0;
-      right: 0;
       height: 100%;
       width: 10%;
-      transform: scaleX(-1);
+      transform: ${({ direction }) => direction === 'left' ? 'scaleY(-1)' : ' '};
     }
   }
 `;
