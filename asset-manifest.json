@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/euphoriasystem.com/static/css/main.9051f7f6.css",
-    "main.js": "/euphoriasystem.com/static/js/main.ba7dc38b.js",
+    "main.js": "/euphoriasystem.com/static/js/main.42264d1c.js",
     "static/js/662.7d7115ea.chunk.js": "/euphoriasystem.com/static/js/662.7d7115ea.chunk.js",
     "static/media/hero_image_euphoria_sadhu.png": "/euphoriasystem.com/static/media/hero_image_euphoria_sadhu.3b5401d1fd692f7741b2.png",
     "static/media/review_sadhguru.png": "/euphoriasystem.com/static/media/review_sadhguru.899656d8225d7c6b66f1.png",
@@ -26,11 +26,11 @@
     "index.html": "/euphoriasystem.com/index.html",
     "static/media/icon_arrow.svg": "/euphoriasystem.com/static/media/icon_arrow.7bfd5bbe655e21b8bfb09b900d6983ec.svg",
     "main.9051f7f6.css.map": "/euphoriasystem.com/static/css/main.9051f7f6.css.map",
-    "main.ba7dc38b.js.map": "/euphoriasystem.com/static/js/main.ba7dc38b.js.map",
+    "main.42264d1c.js.map": "/euphoriasystem.com/static/js/main.42264d1c.js.map",
     "662.7d7115ea.chunk.js.map": "/euphoriasystem.com/static/js/662.7d7115ea.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9051f7f6.css",
-    "static/js/main.ba7dc38b.js"
+    "static/js/main.42264d1c.js"
   ]
 }
