@@ -1,9 +1,8 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { SiteButton } from "../shared/common";
 import { useTranslation } from "react-i18next";
-import HeroImage from "../../img/hero_image_euphoria_sadhu.png";
-import BgHome from "../../img/bg_home.svg";
-import BgHomeVortex from "../../img/bg_home-vortex.png";
+import HeroImage from "../../img/hero_image_euphoria_sadhu.webp";
+import BgHomeVortex from "../../img/bg_home-vortex.webp";
 import styled from "styled-components";
 import { device, size } from "../shared/breakpoints";
 
@@ -42,7 +41,7 @@ const ProductImage = styled.div<{ url: string }>`
     width: 100%;
   }
 
-  ${device.lg} { 
+  ${device.xl} { 
     background-position: center 0;
   }
 `;
