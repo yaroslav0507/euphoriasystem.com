@@ -125,18 +125,17 @@ const ProductBackground = styled.div<{ bg: string }>`
   height: calc(100% + 75px);
   top: -75px;
   left: 0;
+  background-position: 0 20%;
   background: url(${({ bg }) => bg });
   background-size: cover;
-  background-position: 0 20%;
 
   ${device.sm} {
     filter: blur(15px);
+    animation: blur 4s ease 0s infinite;
   }
 
   ${device.md} {
     top: 20px;
-    animation: blur 4s ease 0s infinite;
-    filter: blur(15px);
   }
 `;
 
