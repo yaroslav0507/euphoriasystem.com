@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { SiteButton } from "../shared/common";
 import { useTranslation } from "react-i18next";
 import HeroImage from "../../img/hero_image_euphoria_sadhu.webp";
-import BgHomeVortex from "../../img/bg_home-vortex.webp";
+import BgHomeVortex from "../../img/bg_home-vortex_x2.webp";
 import styled from "styled-components";
 import { device, size } from "../shared/breakpoints";
 

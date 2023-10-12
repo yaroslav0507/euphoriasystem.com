@@ -24,5 +24,10 @@ export const ScrollTop = () => {
     });
   };
 
-  return <ScrollTopElement onClick={scrollToTop} />;
+  return (
+    <ScrollTopElement
+      className="animate__animated animate__fadeInUp"
+      onClick={scrollToTop}
+    />
+  );
 };
