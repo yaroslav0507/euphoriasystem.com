@@ -106,35 +106,37 @@ const TextCol = styled(Col)`
 const ProductBackground = styled.div<{ bg: string }>`
   @keyframes blur {
     0% {
-      -webkit-filter: blur(30px);
-      filter: blur(30px)
+      -webkit-filter: blur(15px);
+      filter: blur(15px)
     }
     50% {
-      -webkit-filter: blur(50px);
-      filter: blur(50px);
+      -webkit-filter: blur(30px);
+      filter: blur(30px);
     }
     25% {
-      -webkit-filter: blur(40px);
-      filter: blur(40px);
+      -webkit-filter: blur(20px);
+      filter: blur(20px);
     }
   }
-
-  // animation: blur 4s ease 0s infinite;
 
   position: absolute;
   z-index: -1;
   width: 100%;
-  height: 100%;
-  left: 0;
+  height: calc(100% + 75px);
   top: -75px;
+  left: 0;
   background: url(${({ bg }) => bg });
   background-size: cover;
   background-position: 0 20%;
 
+  ${device.sm} {
+    filter: blur(15px);
+  }
+
   ${device.md} {
     top: 20px;
     animation: blur 4s ease 0s infinite;
-    filter: blur(30px);
+    filter: blur(15px);
   }
 `;
 
@@ -142,10 +144,6 @@ const HomeWrapper = styled.div`
   position: relative;
 
   &:before {
-    ${device.md} {
-      display: none;
-    }
-
     content: '';
     display: block;
     width: 100%;
@@ -153,9 +151,17 @@ const HomeWrapper = styled.div`
     max-height: 50vh;
     position: absolute;
     left: 0;
-    bottom: -100px;
-    z-index: 2;
+    bottom: 0;
+    z-index: 1;
     background: linear-gradient(0deg, #01152d, #01152dc7, transparent);
+
+    ${device.sm} {
+      transform: translateY(40%);
+    }
+
+    ${device.md} {
+      transform: translateY(60%);
+    }
   }
 `;
 

@@ -4,13 +4,19 @@ import AboutImage from "../../img/about_section_image.jpg";
 import { SectionBanner } from "../shared/SectionBanner";
 import { ImageSection, SectionTextWrapper } from "../shared/common";
 import { useTranslation } from "react-i18next";
+import styled from "styled-components";
+
+const AboutWrapper  =  styled.div`
+  position: relative;
+  z-index: 1;
+`;
 
 export const AboutSection = () => {
   const {t} = useTranslation();
 
   return (
-    <>
-      <Container id="about">
+    <AboutWrapper>
+      <Container id="about" className="z-index-1">
         <Row>
           <Col xs="12">
             <SectionHeader 
@@ -56,6 +62,6 @@ export const AboutSection = () => {
           </Col>
         </Row>
       </Container>
-    </>
+    </AboutWrapper>
   )
 };
