@@ -146,7 +146,7 @@ export const ContactsSection = () => {
   ];
 
   return (
-    <ContactsWrapper>
+    <ContactsWrapper className="pt-xl-4">
       <Container id="contacts">
         <Row>
           <Col xs="12">

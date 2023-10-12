@@ -18,7 +18,7 @@ export const MaterialsSection = () => {
   const { t } = useTranslation();
 
   return (
-    <>
+    <div className="mb-xl-5">
       <Container id="materials">
         <Row>
           <Col xs="12">
@@ -104,6 +104,6 @@ export const MaterialsSection = () => {
           </Col>
         </Row>
       </Container>
-    </>
+    </div>
   )
 };

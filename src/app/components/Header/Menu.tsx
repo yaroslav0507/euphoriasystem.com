@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import { useClickOutside } from "../../hooks/useClickOutside";
 import { useTranslation } from "react-i18next";
@@ -19,6 +19,7 @@ const MenuButtonContainer = styled.div<{ open: boolean }>`
   width: 40px;
   height: 40px;
   display: flex;
+  cursor: pointer;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
@@ -115,10 +116,20 @@ const MenuContainer = styled.div<{ open: boolean }>`
   }
 `;
 
-export const Menu = () => {
+interface IMenuProps {
+  scrollTop?: number;
+}
+
+export const Menu: FC<IMenuProps> = ({ scrollTop }) => {
   const { t } = useTranslation();
   const [menuOpened, setMenuOpened] = useState(false);
 
+  useEffect(() => {
+    if (menuOpened) {
+      setMenuOpened(false);
+    }
+  }, [scrollTop]);
+  
   const toggleMenu = () => {
     setMenuOpened(!menuOpened)
   };
@@ -146,7 +157,7 @@ export const Menu = () => {
     },
   ];
 
-  return (
+  return useMemo(() => 
     <>
       <MenuButtonContainer
         open={menuOpened}
@@ -167,5 +178,5 @@ export const Menu = () => {
         </ul>
       </MenuContainer>
     </>
-  )
+  , [menuOpened]);
 }

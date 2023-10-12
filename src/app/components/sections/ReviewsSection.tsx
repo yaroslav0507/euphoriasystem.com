@@ -114,7 +114,7 @@ export const ReviewsSection = () => {
 
   return (
     <>
-      <Container id="reviews">
+      <Container id="reviews" className="pb-xl-5">
         <Row>
           <Col xs="12">
             <SectionHeader 

@@ -39,13 +39,8 @@ const ProductImage = styled.div<{ url: string }>`
   }
 
   ${device.sm} {
-    background-position: center;
     background-size: contain;
     width: 100%;
-  }
-
-  ${device.xl} { 
-    background-position: center 0;
   }
 `;
 

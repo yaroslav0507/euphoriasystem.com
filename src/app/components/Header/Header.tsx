@@ -101,7 +101,7 @@ export const Header = () => {
               shouldAnimate={shouldAnimate}
             >
               <Locale />
-              <Menu />
+              <Menu scrollTop={scrollTop}/>
             </HeaderControls>
           </HeaderCol>
         </Row>
