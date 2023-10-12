@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.eab7d9c8.css",
-    "main.js": "/static/js/main.f665416a.js",
+    "main.js": "/static/js/main.9b3054c0.js",
     "static/js/662.7d7115ea.chunk.js": "/static/js/662.7d7115ea.chunk.js",
     "static/media/hero_image_euphoria_sadhu.png": "/static/media/hero_image_euphoria_sadhu.3b5401d1fd692f7741b2.png",
     "static/media/review_sadhguru.png": "/static/media/review_sadhguru.899656d8225d7c6b66f1.png",
     "static/media/about_section_image.jpg": "/static/media/about_section_image.fdf7474f3b15f99e987c.jpg",
     "static/media/bg_cooper.jpg": "/static/media/bg_cooper.daf48041818c5576a06d.jpg",
     "static/media/bg_aluminium.jpg": "/static/media/bg_aluminium.0429915adf0c4019c480.jpg",
-    "static/media/bg_home-vortex.png": "/static/media/bg_home-vortex.35df8ce46792278e9b42.png",
+    "static/media/bg_home-vortex.png": "/static/media/bg_home-vortex.db404c3c4f35d85d38cc.png",
     "static/media/review_rajesh.png": "/static/media/review_rajesh.98719e4fe22e1db9a009.png",
     "static/media/bg_banner.jpeg": "/static/media/bg_banner.ba879b143edbdf38ffc3.jpeg",
     "static/media/review_gandhi.png": "/static/media/review_gandhi.86d9aecee9b86eb5e0fe.png",
@@ -26,11 +26,11 @@
     "index.html": "/index.html",
     "static/media/icon_arrow.svg": "/static/media/icon_arrow.7bfd5bbe655e21b8bfb09b900d6983ec.svg",
     "main.eab7d9c8.css.map": "/static/css/main.eab7d9c8.css.map",
-    "main.f665416a.js.map": "/static/js/main.f665416a.js.map",
+    "main.9b3054c0.js.map": "/static/js/main.9b3054c0.js.map",
     "662.7d7115ea.chunk.js.map": "/static/js/662.7d7115ea.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.eab7d9c8.css",
-    "static/js/main.f665416a.js"
+    "static/js/main.9b3054c0.js"
   ]
 }
