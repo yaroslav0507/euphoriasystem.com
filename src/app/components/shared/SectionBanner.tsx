@@ -20,6 +20,7 @@ const Wrapper = styled.div<BackgroundProps>`
   display: flex;
   flex-direction: column;
   padding: 24px;
+  margin: 24px 0;
   overflow: hidden;
   position: relative;
   background: url(${bg});
@@ -56,6 +57,7 @@ const Title = styled.h3`
 const Content = styled.div`
   font-size: 16px;
   white-space: pre-line;
+  margin-bottom: 32px;
 
   ${device.xs} {
     font-size: 20px;
@@ -63,10 +65,6 @@ const Content = styled.div`
 `;
 
 const Container = styled.div`
-  ${SiteButton} {
-    margin-top: 24px;
-  }
-
   ${device.md} {
     flex-direction: column;
   }

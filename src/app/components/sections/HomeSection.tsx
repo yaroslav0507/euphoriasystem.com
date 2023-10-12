@@ -3,6 +3,7 @@ import { SiteButton } from "../shared/common";
 import { useTranslation } from "react-i18next";
 import HeroImage from "../../img/hero_image_euphoria_sadhu.png";
 import BgHome from "../../img/bg_home.svg";
+import BgHomeVortex from "../../img/bg_home-vortex.png";
 import styled from "styled-components";
 import { device, size } from "../shared/breakpoints";
 
@@ -28,13 +29,17 @@ const ProductImage = styled.div<{ url: string }>`
   background-size: 100%;
   width: 100%;
   height: 100%;
+  margin: auto;
 
   ${device.xs} and (min-height: ${size.md}) { 
     background-position: center;
+    width: 100%;
   }
 
-  ${device.sm} and (min-height: ${size.md}){ 
+  ${device.sm} {
     background-position: center;
+    background-size: contain;
+    width: 100%;
   }
 
   ${device.lg} { 
@@ -43,23 +48,40 @@ const ProductImage = styled.div<{ url: string }>`
 `;
 
 const ProductTitle = styled.div`
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 700;
   white-space: pre-line;
   min-width: 320px;
 
-  ${device.xs} and (min-height: ${size.sm}) {
+  ${device.xs} {
+    font-size: 32px;
+  }
+
+  ${device.xs} and (min-height: ${size.sm}),
+  ${device.sm} {
     font-size: 38px;
+  }
+
+  ${device.lg} {
+    font-size: 57px;
+  }
+
+  ${device.xl} {
+    font-size: 63px;
   }
 `;
 
 const ProductSubTitle = styled.div`
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 300;
   margin-bottom: 24px;
 
   ${device.xs} {
     font-size: 24px;
+  }
+
+  ${device.lg} {
+    font-size: 30px;
   }
 `;
 
@@ -76,32 +98,63 @@ const TextCol = styled(Col)`
   ${device.sm} { 
     position: initial;
   }
+
+  ${device.xl} { 
+    padding-top: 0;
+  }
 `;
 
-const ProductBackground = styled.div`
+const ProductBackground = styled.div<{ bg: string }>`
+  @keyframes blur {
+    0% {
+      -webkit-filter: blur(30px);
+      filter: blur(30px)
+    }
+    50% {
+      -webkit-filter: blur(50px);
+      filter: blur(50px);
+    }
+    25% {
+      -webkit-filter: blur(40px);
+      filter: blur(40px);
+    }
+  }
+
+  // animation: blur 4s ease 0s infinite;
+
   position: absolute;
   z-index: -1;
   width: 100%;
-  height: calc(100% + 100px);
+  height: 100%;
   left: 0;
-  top: -100px;
-  background: url(${BgHome});
+  top: -75px;
+  background: url(${({ bg }) => bg });
   background-size: cover;
   background-position: 0 20%;
+
+  ${device.md} {
+    top: 20px;
+    animation: blur 4s ease 0s infinite;
+    filter: blur(30px);
+  }
 `;
 
 const HomeWrapper = styled.div`
   position: relative;
 
   &:before {
+    ${device.md} {
+      display: none;
+    }
+
     content: '';
     display: block;
     width: 100%;
-    height: 320px;
+    height: 420px;
     max-height: 50vh;
     position: absolute;
     left: 0;
-    bottom: -2px;
+    bottom: -100px;
     z-index: 2;
     background: linear-gradient(0deg, #01152d, #01152dc7, transparent);
   }
@@ -115,49 +168,65 @@ const ProductCol = styled(Col)`
 export const HomeSection = () => {
   const { t } = useTranslation();
 
+  const CallToAction = (
+    <Row>
+      <Col xs="12">
+        <ProductTitle>
+          {t('home.title')}
+        </ProductTitle>
+      </Col>
+
+      <Col xs="12">
+        <ProductSubTitle>
+          {t('home.subtitle')}
+        </ProductSubTitle>
+      </Col>
+
+      <Col
+        xs="12"
+        md="10"
+        lg="8"
+      >
+        <Row>
+          <Col xs="6">
+            <SiteButton href="#contacts">{t('button.order')}</SiteButton>
+          </Col>
+
+          <Col xs="6">
+            <SiteButton href="#about" variant="outline-primary">{t('button.more')}</SiteButton>
+          </Col>
+        </Row>
+      </Col>
+
+    </Row>
+  );
+
   return (
     <HomeWrapper>
       <Container>
         <Stage>
-          <TextCol 
+          <TextCol
             xs="12"
-            sm="7" 
-            lg="6" 
-            xl="5"
+            sm="7"
+            xxl="7"
             className="animate__animated animate__fadeInUp"
           >
-            <Row>
-              <Col xs="12">
-                <ProductTitle>
-                  {t('home.title')}
-                </ProductTitle>
-              </Col>
-  
-              <Col xs="12">
-                <ProductSubTitle>
-                  {t('home.subtitle')}
-                </ProductSubTitle>
-              </Col>
-  
-              <Col xs="6">
-                <SiteButton href="#contacts">{t('button.order')}</SiteButton>
-              </Col>
-  
-              <Col xs="6">
-                <SiteButton href="#about" variant="outline-primary">{t('button.more')}</SiteButton>
-              </Col>
-            </Row>
+            {CallToAction}
           </TextCol>
   
-          <ProductCol xs="12" sm="5" lg="6" xl="7">
+          <ProductCol
+            xs="12"
+            sm="5"
+            xxl="5"
+          >
             <ProductImage 
               url={HeroImage}
-              className="animate__animated animate__slideInUp"
+              className="animate__animated animate__zoomIn animate__delay-1s"
             />
           </ProductCol>
         </Stage>
   
-        <ProductBackground />
+        <ProductBackground bg={BgHomeVortex} />
       </Container>
     </HomeWrapper>
   )

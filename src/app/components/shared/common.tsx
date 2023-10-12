@@ -45,10 +45,12 @@ const containers = [
   [size.xxl, 1320],
 ];
 
-export const SectionTextWrapper = styled.div<{ direction: 'left' | 'right' }>`
+type TDirection = 'left' | 'right';
+
+export const SectionTextWrapper = styled.div<{ direction: TDirection }>`
   display: flex;
   flex-direction: column;
-  padding: 24px;
+  padding: 24px 12px;
 
   ${({ direction }) => containers.map(([size, width]) => `
     @media (min-width: ${size}) {
@@ -56,8 +58,8 @@ export const SectionTextWrapper = styled.div<{ direction: 'left' | 'right' }>`
     }
   `)}
 
-  button {
-    margin: 12px 0;
+  ${SiteButton} {
+    margin: 24px 0 40px;
 
     ${device.md} {
       margin: 24px 0 12px;
@@ -67,7 +69,7 @@ export const SectionTextWrapper = styled.div<{ direction: 'left' | 'right' }>`
 
 export const ImageSection = styled.div<{ 
   url: string;
-  direction: 'left' | 'right';
+  direction: TDirection;
   bgSize?: string;
   bgColor?: string;
   bgPosition?: string;
