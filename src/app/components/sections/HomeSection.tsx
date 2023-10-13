@@ -106,17 +106,30 @@ const TextCol = styled(Col)`
 `;
 
 const ProductBackground = styled.div<{ bg: string }>`
+  @keyframes blur_xs {
+    0%,
+    15% {
+      filter: blur(0)
+    }
+    25% {
+      filter: blur(1px);
+    }
+    35% {
+      filter: blur(2px)
+    }
+    45% {
+      filter: blur(3px);
+    }
+  }
+
   @keyframes blur {
     0% {
-      -webkit-filter: blur(15px);
       filter: blur(15px)
     }
     50% {
-      -webkit-filter: blur(30px);
       filter: blur(30px);
     }
     25% {
-      -webkit-filter: blur(20px);
       filter: blur(20px);
     }
   }
@@ -130,10 +143,12 @@ const ProductBackground = styled.div<{ bg: string }>`
   background: url(${({ bg }) => bg });
   background-size: cover;
   background-position: center 0;
+  animation: blur_xs 7s ease 0s infinite;
+
 
   ${device.sm} {
     filter: blur(15px);
-    animation: blur 4s ease 0s infinite;
+    animation: blur 7s ease 0s infinite;
   }
 
   ${device.md} {
