@@ -6,8 +6,7 @@ import styled from "styled-components";
 import { device, size } from "../shared/breakpoints";
 import { FireButton } from "../shared/FireButton";
 import { BackgroundSection } from "../shared/common";
-
-const headerHeight = '75px';
+import { headerHeight } from "../Header/Header";
 
 const Stage = styled(Row)`
   position: relative;
@@ -33,14 +32,9 @@ const ProductImage = styled.div<{ url: string }>`
   height: 100%;
   margin: auto;
 
-  ${device.xs} and (min-height: ${size.md}) { 
-    background-position: center;
-    width: 100%;
-  }
-
   ${device.sm} {
+    background-position: center;
     background-size: contain;
-    width: 100%;
   }
 `;
 

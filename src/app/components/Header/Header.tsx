@@ -8,9 +8,16 @@ import { Menu } from "./Menu";
 import { useEffect, useMemo, useState } from "react";
 import { device } from "../shared/breakpoints";
 
+export const headerHeight = '100px';
+
 const HeaderWrapper = styled.div`
-  height: 75px;
+  height: ${headerHeight};
   padding: 12px 0;
+  display: flex;
+
+  ${device.sm} {
+    align-items: center;
+  }
 `;
 
 const HeaderCol = styled(Col)`
