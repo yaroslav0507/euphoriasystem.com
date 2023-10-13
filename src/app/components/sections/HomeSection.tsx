@@ -66,7 +66,6 @@ const ProductTitle = styled.div`
 const ProductSubTitle = styled.div`
   font-size: 20px;
   font-weight: 300;
-  margin-bottom: 24px;
 
   ${device.xs} {
     font-size: 24px;
@@ -138,7 +137,7 @@ export const HomeSection = () => {
       </Col>
 
       <Col xs="12">
-        <ProductSubTitle>
+        <ProductSubTitle className="mb-4 mb-lg-5">
           {t('home.subtitle')}
         </ProductSubTitle>
       </Col>
