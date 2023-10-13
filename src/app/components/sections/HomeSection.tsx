@@ -89,8 +89,8 @@ const ProductSubTitle = styled.div`
 
 const TextCol = styled(Col)`
   position: absolute;
-  padding-bottom: 3%;
-  bottom: 0;
+  padding-bottom: 4%;
+  bottom: -1px;
   z-index: 2;
 
   ${device.xs} and (min-height: ${size.sm}) {
