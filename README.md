@@ -1,6 +1,6 @@
 # euphoriasystem.com
 
-Landing Page of the Euphoria System Sadhu Boards Brand
+Landing Page of the Euphoria System Sadhu Boards Brand - https://euphoriasystem.com
 
 -------------------------------------------------------
 ![image](https://github.com/yaroslav0507/euphoriasystem.com/assets/6556178/f456f47b-af7f-44ef-ab6a-110d7e65b1d1)
