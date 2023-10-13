@@ -103,7 +103,7 @@ export const ContactsSection = () => {
   const contacts = [
     {
       icon: IconCall,
-      text: "+38 (093) 349-58-11",
+      text: "+38 (093) 349 58 11",
       link: "tel:+380933495811",
       target: '_self',
       onClick: () => logAnalytics('phone')

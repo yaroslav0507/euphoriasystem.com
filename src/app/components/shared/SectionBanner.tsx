@@ -25,11 +25,8 @@ const Wrapper = styled.div<BackgroundProps>`
   margin: 24px 0;
   overflow: hidden;
   position: relative;
-  background: url(${bg});
   border-radius: 25px;
   margin-bottom: 40px;
-  background-size: ${({ bgSize }) => bgSize || '200%' };
-  background-position: ${({ bgPosition }) => bgPosition || '60% 0' };
   
   ${device.xs} {
     padding: 32px;
@@ -39,13 +36,24 @@ const Wrapper = styled.div<BackgroundProps>`
     z-index: 1;
   }
 
+  &:before,
   &:after {
-    content: "";
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     position: absolute;
+  }
+
+  &:before {
+    content: '';
+    background: url(${bg});
+    background-size: ${({ bgSize }) => bgSize || '200%'};
+    background-position: ${({ bgPosition }) => bgPosition || '60% 0' };
+  }
+
+  &:after {
+    content: "";
     z-index: 0;
     background: linear-gradient(90deg, #000000b5, #0000004f);
   }

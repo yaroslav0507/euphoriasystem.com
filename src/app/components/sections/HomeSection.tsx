@@ -1,5 +1,4 @@
 import { Col, Container, Row } from "react-bootstrap";
-import { SiteButton } from "../shared/common";
 import { useTranslation } from "react-i18next";
 import HeroImage from "../../img/hero_image_euphoria_sadhu.webp";
 import BgHomeVortex from "../../img/bg_home-vortex_x2.webp";
@@ -7,12 +6,14 @@ import styled from "styled-components";
 import { device, size } from "../shared/breakpoints";
 import { FireButton } from "../shared/FireButton";
 
+const headerHeight = '75px';
+
 const Stage = styled(Row)`
   position: relative;
   flex-flow: column-reverse;
   justify-content: flex-end;
   min-height: 270px;
-  height: calc(100svh - 78px);
+  height: calc(100svh - ${headerHeight});
   overflow: hidden;
 
   ${device.sm} { 
@@ -123,12 +124,12 @@ const ProductBackground = styled.div<{ bg: string }>`
   position: absolute;
   z-index: -1;
   width: 100%;
-  height: calc(100% + 75px);
-  top: -75px;
+  height: calc(100% + ${headerHeight});
+  top: -${headerHeight};
   left: 0;
-  background-position: 0 20%;
   background: url(${({ bg }) => bg });
   background-size: cover;
+  background-position: center 0;
 
   ${device.sm} {
     filter: blur(15px);
