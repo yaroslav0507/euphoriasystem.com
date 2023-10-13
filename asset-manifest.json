@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.eab7d9c8.css",
-    "main.js": "/static/js/main.a7b47f6c.js",
+    "main.js": "/static/js/main.d4163e2f.js",
     "static/js/662.7d7115ea.chunk.js": "/static/js/662.7d7115ea.chunk.js",
     "static/media/review_sadhguru.png": "/static/media/review_sadhguru.899656d8225d7c6b66f1.png",
     "static/media/about_section_image.jpg": "/static/media/about_section_image.fdf7474f3b15f99e987c.jpg",
@@ -26,11 +26,11 @@
     "index.html": "/index.html",
     "static/media/icon_arrow.svg": "/static/media/icon_arrow.7bfd5bbe655e21b8bfb09b900d6983ec.svg",
     "main.eab7d9c8.css.map": "/static/css/main.eab7d9c8.css.map",
-    "main.a7b47f6c.js.map": "/static/js/main.a7b47f6c.js.map",
+    "main.d4163e2f.js.map": "/static/js/main.d4163e2f.js.map",
     "662.7d7115ea.chunk.js.map": "/static/js/662.7d7115ea.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.eab7d9c8.css",
-    "static/js/main.a7b47f6c.js"
+    "static/js/main.d4163e2f.js"
   ]
 }
