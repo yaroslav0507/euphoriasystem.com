@@ -61,9 +61,9 @@ export default {
             title: 'Sadhguru',
             subtitle: 'Mystic / Yogi / Influencer',
             insta: '@sadhguru.isha',
-            content: 'Unfold your genius with Euphoria System sadhu. Unless you constantly strive to be better, you will become a stagnant pool. Stagnation will ultimately poison your life. Ohmmm...'
+            content: 'When the source of change stops flowing within you, you become a stagnant pool. Turn your stream into a mountain river with Euphoria System\'s Sadhu Boards. Ummm...'
           }
-        ]
+        ].reverse()
     },
     contacts: {
         name: "Contacts",

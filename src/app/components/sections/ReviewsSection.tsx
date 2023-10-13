@@ -96,7 +96,10 @@ const ReviewContent = styled.div`
   font-weight: 300;
   font-size: 14px;
   line-height: 20px;
-  text-align: left;
+  text-align: left;    
+  font-weight: 400;
+  color: #01152d;
+
 
   ${device.xs} {
     font-size: 18px;

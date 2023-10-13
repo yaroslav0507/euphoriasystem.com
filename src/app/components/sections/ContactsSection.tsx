@@ -12,6 +12,8 @@ import { SectionBanner } from "../shared/SectionBanner";
 import { ScrollTop } from "../shared/ScrollTop";
 import { useTranslation } from "react-i18next";
 import { device } from "../shared/breakpoints";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
+import { useRef } from "react";
 
 const ContactsWrapper = styled.div`
   background: radial-gradient(#14385a, #14385a96, transparent);
@@ -92,6 +94,8 @@ const ImgArrow = styled.img`
 
 export const ContactsSection = () => {
   const { t } = useTranslation();
+  const ref = useRef<HTMLDivElement>(null);
+  const isVisible = useIntersectionObserver(ref);
 
   const contacts = [
     {
@@ -173,8 +177,8 @@ export const ContactsSection = () => {
             />
           </Col>
 
-          <Col xs="12">
-            <ScrollTop />
+          <Col xs="12" ref={ref}>
+            <ScrollTop visible={isVisible} />
           </Col>
         </Row>
       </Container>
