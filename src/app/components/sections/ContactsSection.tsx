@@ -7,13 +7,15 @@ import IconArrow from "../../img/icons/icon_arrow.svg";
 import FlagUA from "../../img/langs/ua.svg";
 import ImgMap from "../../img/bg_map.png";
 import styled from "styled-components";
-import { SiteButton } from "../shared/common";
 import { SectionBanner } from "../shared/SectionBanner";
 import { ScrollTop } from "../shared/ScrollTop";
 import { useTranslation } from "react-i18next";
 import { device } from "../shared/breakpoints";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import { useRef } from "react";
+import { getAnalytics, logEvent } from "firebase/analytics";
+import { app } from "../../firebase";
+const analytics = getAnalytics(app);
 
 const ContactsWrapper = styled.div`
   background: radial-gradient(#14385a, #14385a96, transparent);
@@ -34,7 +36,9 @@ const ContactIcon = styled.div`
   background: rgba(255, 255, 255, 0.05);
 `;
 
-const Contact = styled.div`
+const Contact = styled.a`
+  color: #fff;
+  text-decoration: none;
   display: flex;
   align-items: center;
   gap: 18px;
@@ -46,11 +50,6 @@ const Contact = styled.div`
 
   ${device.xs} {
     font-size: 20px;
-  }
-
-  a {
-    color: #fff;
-    text-decoration: none;
   }
 
   &:hover {
@@ -97,21 +96,31 @@ export const ContactsSection = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isVisible = useIntersectionObserver(ref);
 
+  const logAnalytics = (key: 'phone' | 'telegram' | 'instagram') => {
+    logEvent(analytics, 'generate_lead', { key });
+  }
+
   const contacts = [
     {
       icon: IconCall,
       text: "+38 (093) 349-58-11",
       link: "tel:+380933495811",
+      target: '_self',
+      onClick: () => logAnalytics('phone')
     },
     {
       icon: IconTelegram,
       text: "@euphoriasystem.sadhu",
       link: "https://t.me/yaroslav0507",
+      target: '_blank',
+      onClick: () => logAnalytics('telegram')
     },
     {
       icon: IconInstagram,
       text: "@euphoriasystem.sadhu",
       link: "https://www.instagram.com/euphoriasystem.sadhu",
+      target: '_blank',
+      onClick: () => logAnalytics('instagram')
     },
   ];
 
@@ -130,14 +139,17 @@ export const ContactsSection = () => {
         <Row>
           <Col xs="12" md="6" xl="4" className="mb-5">
             {contacts.map((contact, index) => (
-              <Contact key={index}>
+              <Contact
+                key={index}
+                href={contact.link}
+                target={contact.target}
+                onClick={contact.onClick}
+              >
                 <ContactIcon>
                   <img src={contact.icon} />
                 </ContactIcon>
 
-                <a href={contact.link} target="_blank">
-                  {contact.text}
-                </a>
+                <span>{contact.text}</span>
               </Contact>
             ))}
           </Col>
@@ -170,15 +182,15 @@ export const ContactsSection = () => {
             <SectionBanner
               bgSize="cover"
               bgPosition="10% 0"
+              buttonLink="#contacts"
               title={t('contacts.banner.title')}
               content={t('contacts.banner.text')}
-              buttonText={t('contacts.banner.button')}
-              buttonLink="#contacts"
+              translationKey="contacts.banner.button"
             />
           </Col>
 
           <Col xs="12" ref={ref}>
-            <ScrollTop visible={isVisible} />
+            <ScrollTop isVisible={isVisible} />
           </Col>
         </Row>
       </Container>

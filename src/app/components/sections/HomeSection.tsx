@@ -5,6 +5,7 @@ import HeroImage from "../../img/hero_image_euphoria_sadhu.webp";
 import BgHomeVortex from "../../img/bg_home-vortex_x2.webp";
 import styled from "styled-components";
 import { device, size } from "../shared/breakpoints";
+import { FireButton } from "../shared/FireButton";
 
 const Stage = styled(Row)`
   position: relative;
@@ -193,11 +194,11 @@ export const HomeSection = () => {
       >
         <Row>
           <Col xs="6">
-            <SiteButton href="#contacts">{t('button.order')}</SiteButton>
+            <FireButton href="#contacts" translationKey="button.order" />
           </Col>
 
           <Col xs="6">
-            <SiteButton href="#about" variant="outline-primary">{t('button.more')}</SiteButton>
+            <FireButton href="#about" variant="outline-primary" translationKey="button.more" />
           </Col>
         </Row>
       </Col>

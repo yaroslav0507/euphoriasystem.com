@@ -3,6 +3,8 @@ import styled from "styled-components";
 import bg from "../../img/bg_banner.jpeg";
 import { device } from "./breakpoints";
 import { SiteButton } from "./common";
+import { useTranslation } from "react-i18next";
+import { FireButton } from "./FireButton";
 
 interface BackgroundProps {
   bgSize?: string;
@@ -12,8 +14,8 @@ interface BackgroundProps {
 interface SectionBannerProps extends BackgroundProps {
   title: string;
   content: string;
-  buttonText?: string;
   buttonLink?: string;
+  translationKey?: string;
 }
 
 const Wrapper = styled.div<BackgroundProps>`
@@ -73,8 +75,8 @@ const Container = styled.div`
 export const SectionBanner: FC<SectionBannerProps> = ({ 
   title, 
   content,
-  buttonText,
   buttonLink,
+  translationKey,
   ...bgProps
  }) => {
   return (
@@ -84,7 +86,12 @@ export const SectionBanner: FC<SectionBannerProps> = ({
       <Container>
         <Content>{content}</Content>
 
-        {buttonText && <SiteButton href={buttonLink}>{buttonText}</SiteButton>}
+        {translationKey && (
+          <FireButton
+            href={buttonLink}
+            translationKey={translationKey}
+          />
+        )}
       </Container>
     </Wrapper>
   );

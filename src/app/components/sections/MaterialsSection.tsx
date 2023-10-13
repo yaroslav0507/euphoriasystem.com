@@ -3,10 +3,11 @@ import { Col, Container, Row } from "react-bootstrap";
 import { SectionHeader } from "../shared/SectionHeader";
 import BgCooper from "../../img/bg_cooper.jpg";
 import BgAluminium from "../../img/bg_aluminium.jpg";
-import { ImageSection, SectionTextWrapper, SiteButton } from "../shared/common";
+import { ImageSection, SectionTextWrapper } from "../shared/common";
 import styled from "styled-components";
 import { SectionBanner } from "../shared/SectionBanner";
 import { useTranslation } from "react-i18next";
+import { FireButton } from "../shared/FireButton";
 
 const SectionRow = styled(Row)`
   background: #031837;
@@ -48,7 +49,10 @@ export const MaterialsSection = () => {
                 {t('materials.cooper.text')}
               </p>
 
-              <SiteButton href="#contacts">{t('materials.cooper.button')}</SiteButton>
+              <FireButton
+                href="#contacts"
+                translationKey="materials.cooper.button"
+              />
             </SectionTextWrapper>
           </Col>
         </SectionRow>
@@ -77,7 +81,10 @@ export const MaterialsSection = () => {
                 {t('materials.aluminium.text')}
               </p>
 
-              <SiteButton href="#contacts">{t('materials.aluminium.button')}</SiteButton>
+              <FireButton
+                href="#contacts"
+                translationKey="materials.aluminium.button"
+              />
             </SectionTextWrapper>  
           </Col>
         </SectionRow>
@@ -89,10 +96,10 @@ export const MaterialsSection = () => {
             <SectionBanner
               bgSize="cover"
               bgPosition="10% 0"
+              buttonLink="#contacts"
               title={t('materials.guide.title')}
               content={t('materials.guide.text')}
-              buttonText={t('materials.guide.button')}
-              buttonLink="#contacts"
+              translationKey="materials.guide.button"
             />
           </Col>
         </Row>
