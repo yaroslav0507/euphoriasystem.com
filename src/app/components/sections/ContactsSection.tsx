@@ -1,6 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { SectionHeader } from "../shared/SectionHeader";
 import IconCall from "../../img/icons/icon_call.svg";
+import BgHomeVortex from "../../img/bg_home-vortex_x2.webp";
 import IconInstagram from "../../img/icons/icon_instagram.svg";
 import IconTelegram from "../../img/icons/icon_telegram.svg";
 import IconArrow from "../../img/icons/icon_arrow.svg";
@@ -15,11 +16,14 @@ import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import { useRef } from "react";
 import { getAnalytics, logEvent } from "firebase/analytics";
 import { app } from "../../firebase";
+import { BackgroundSection } from "../shared/common";
 const analytics = getAnalytics(app);
 
 const ContactsWrapper = styled.div`
-  background: radial-gradient(#14385a, #14385a96, transparent);
+  background: radial-gradient(#06121d, #08182696, transparent);
+  
   padding-bottom: 40px;
+  position: relative;
 
   h4 {
     margin-bottom: 12px;
@@ -89,6 +93,23 @@ const ImgFlag = styled.img`
 
 const ImgArrow = styled.img`
   margin-top: -50px;
+`;
+
+const ContactsBackgroundSection = styled(BackgroundSection)`
+  opacity: .2;
+  animation: none;
+  background-size: contain;
+  background-position: center bottom;
+  transform: scale(-1);
+
+  ${device.sm} {
+    opacity: .4;
+    filter: blur(30px);
+  }
+  
+  ${device.xl} {
+    opacity: 1;
+  }
 `;
 
 export const ContactsSection = () => {
@@ -194,6 +215,8 @@ export const ContactsSection = () => {
           </Col>
         </Row>
       </Container>
+
+      <ContactsBackgroundSection bg={BgHomeVortex} />
     </ContactsWrapper>
   );
 };

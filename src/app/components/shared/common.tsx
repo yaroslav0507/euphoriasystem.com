@@ -128,3 +128,26 @@ export const ImageSection = styled.div<{
     }
   }
 `;
+
+export const BackgroundSection = styled.div<{ bg: string, headerHeight?: string }>`
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: calc(100% + ${({ headerHeight }) => headerHeight || '0px'});
+  top: -${({ headerHeight }) => headerHeight || '0px'};
+  left: 0;
+  background: url(${({ bg }) => bg});
+  background-size: cover;
+  background-position: center 0;
+  background-repeat: no-repeat;
+  animation: blur_xs 7s ease 0s infinite;
+
+  ${device.sm} {
+    filter: blur(15px);
+    animation: blur 7s ease 0s infinite;
+  }
+
+  ${device.md} {
+    top: 20px;
+  }
+`;

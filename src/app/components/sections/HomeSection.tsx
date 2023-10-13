@@ -5,6 +5,7 @@ import BgHomeVortex from "../../img/bg_home-vortex_x2.webp";
 import styled from "styled-components";
 import { device, size } from "../shared/breakpoints";
 import { FireButton } from "../shared/FireButton";
+import { BackgroundSection } from "../shared/common";
 
 const headerHeight = '75px';
 
@@ -105,57 +106,6 @@ const TextCol = styled(Col)`
   }
 `;
 
-const ProductBackground = styled.div<{ bg: string }>`
-  @keyframes blur_xs {
-    0%,
-    15% {
-      filter: blur(0)
-    }
-    25% {
-      filter: blur(1px);
-    }
-    35% {
-      filter: blur(2px)
-    }
-    45% {
-      filter: blur(3px);
-    }
-  }
-
-  @keyframes blur {
-    0% {
-      filter: blur(15px)
-    }
-    50% {
-      filter: blur(30px);
-    }
-    25% {
-      filter: blur(20px);
-    }
-  }
-
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: calc(100% + ${headerHeight});
-  top: -${headerHeight};
-  left: 0;
-  background: url(${({ bg }) => bg });
-  background-size: cover;
-  background-position: center 0;
-  animation: blur_xs 7s ease 0s infinite;
-
-
-  ${device.sm} {
-    filter: blur(15px);
-    animation: blur 7s ease 0s infinite;
-  }
-
-  ${device.md} {
-    top: 20px;
-  }
-`;
-
 const HomeWrapper = styled.div`
   position: relative;
 
@@ -247,7 +197,10 @@ export const HomeSection = () => {
           </ProductCol>
         </Stage>
   
-        <ProductBackground bg={BgHomeVortex} />
+        <BackgroundSection
+          bg={BgHomeVortex}
+          headerHeight={headerHeight}
+        />
       </Container>
     </HomeWrapper>
   )

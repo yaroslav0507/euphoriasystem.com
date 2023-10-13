@@ -13,6 +13,10 @@ const Wrapper = styled.div`
   text-align: center;
   flex-direction: column;
   padding: 80px 0;
+
+  ${device.xl} {
+    padding: 120px 0;
+  }
 `;
 
 const Name = styled.div`
