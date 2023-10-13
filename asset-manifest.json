@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.eab7d9c8.css",
-    "main.js": "/static/js/main.eb20b3fb.js",
+    "main.js": "/static/js/main.53643bf7.js",
     "static/js/662.7d7115ea.chunk.js": "/static/js/662.7d7115ea.chunk.js",
     "static/media/review_sadhguru.png": "/static/media/review_sadhguru.899656d8225d7c6b66f1.png",
     "static/media/about_section_image.jpg": "/static/media/about_section_image.fdf7474f3b15f99e987c.jpg",
@@ -22,15 +22,15 @@
     "static/media/icon_instagram.svg": "/static/media/icon_instagram.5d4f2a32d586139754ad73dae4cb3e9a.svg",
     "static/media/icon_telegram.svg": "/static/media/icon_telegram.acfc5fc8229be7f73e070361e1bfc32d.svg",
     "static/media/icon_up.svg": "/static/media/icon_up.708028793b4f117ce2657f68454509c7.svg",
-    "index.html": "/index.html",
     "static/media/quote_end.svg": "/static/media/quote_end.ccf5a14e78b8e781aff0a298247163e6.svg",
+    "index.html": "/index.html",
     "static/media/icon_arrow.svg": "/static/media/icon_arrow.7bfd5bbe655e21b8bfb09b900d6983ec.svg",
     "main.eab7d9c8.css.map": "/static/css/main.eab7d9c8.css.map",
-    "main.eb20b3fb.js.map": "/static/js/main.eb20b3fb.js.map",
+    "main.53643bf7.js.map": "/static/js/main.53643bf7.js.map",
     "662.7d7115ea.chunk.js.map": "/static/js/662.7d7115ea.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.eab7d9c8.css",
-    "static/js/main.eb20b3fb.js"
+    "static/js/main.53643bf7.js"
   ]
 }
