@@ -110,6 +110,62 @@ const ContactsBackgroundSection = styled(BackgroundSection)`
   }
 `;
 
+const Price = styled.span<{ $before: string }>`
+  position: relative;
+  font-size: 75px;
+  font-weight: 700;
+  padding-top: 32px;
+
+  &:before {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 80px;
+    margin: auto;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 5px 7px;
+    line-height: 1em;
+    position: absolute;
+    border-radius: 5px;
+    background: #ffffff1f;
+    text-decoration: line-through;
+    text-shadow: 0 0 5px #00000057;
+    content: '${({ $before }) => $before}';
+
+    ${device.xl} {
+      left: initial;
+    }
+  }
+`;
+
+const Descriptor = styled.div`
+  font-size: 12px;
+  max-width: 210px;
+  text-align: center;
+  margin: auto;
+
+  ${device.sm} {
+    margin-top: 0;
+    max-width: none;
+  }
+
+  ${device.md} {
+    font-size: 14px;
+  }
+
+  ${device.xl} {
+    text-align: left;
+    margin-top: -24px;
+  }
+
+  &:before {
+    content: '*';
+    transform: translateX(-100%);
+    position: absolute;
+  }
+`
+
 export const ContactsSection = () => {
   const { t } = useTranslation();
 
@@ -182,17 +238,25 @@ export const ContactsSection = () => {
           </Col>
 
           <Col xs="12" md="12" xl="4" className="mb-5">
-            <h4>{t('contacts.delivery.title')}</h4>
+            <h4 className="mb-2">{t('contacts.delivery.title')}</h4>
 
-            <p>
+            <p className="mb-5 mb-xl-2">
               {t('contacts.delivery.text')}
             </p>
 
-            <h4>{t('contacts.pricing.title')}</h4>
+            <h4 className="mb-5 mb-xl-0 pb-5 pb-xl-0">{t('contacts.pricing.title')}</h4>
 
-            <p>
-              {t('contacts.pricing.text')}
-            </p>
+            <Row className="mb-5 mb-xl-0 pt-5 pt-xl-0">
+              <Col xs="12" xl="6" className="text-center">
+                <Price $before="$200">
+                  $150
+                </Price>
+              </Col>
+
+              <Col xs="12" xl="6" className="d-flex align-items-center">
+                <Descriptor>{t('contacts.pricing.text')}</Descriptor>
+              </Col>
+            </Row>
           </Col>
 
           <Col xs="12">

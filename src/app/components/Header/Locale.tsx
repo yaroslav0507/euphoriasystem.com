@@ -40,7 +40,7 @@ type TLocale = "en" | "uk";
 
 export const Locale = () => {
   const { i18n } = useTranslation();
-  const isUA = displayUkrainian(navigator.language);
+  const isUA = displayUkrainian(i18n.language);
 
   const selectLanguage = (lng: TLocale) => {
     i18n.changeLanguage(lng);

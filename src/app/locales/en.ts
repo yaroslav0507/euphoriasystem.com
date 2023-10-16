@@ -71,11 +71,11 @@ export default {
         map: "We are Here",
         delivery: {
             title: "Delivery",
-            text: "We ship our boards worldwide except russia and belarus. \nDelivery by Ukraine is done by Nova Poshta provider."
+            text: "We ship our boards worldwide except russia and belarus. Delivery by Ukraine is done by Nova Poshta provider."
         },
         pricing: {
             title: "Pricing",
-            text: "Please contact  our managers in order to get the actual price for our sadhu boards."
+            text: "The price is for a set of sadhu boards with a choice of aluminum or copper nails."
         },
         banner: {
             title: "Need help choosing the pitch and material of the nails?",
