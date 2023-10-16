@@ -126,7 +126,7 @@ export const ReviewsSection = () => {
 
         <Row className="align-items-end justify-content-center overflow-hidden mb-5">
           {reviews.map((review, index) => (
-            <Col key={index} xs="12" md="6" lg="4" className="animated__animate animate__fadeIn reveal">
+            <Col key={index} xs="12" md="6" lg="4" className="animated__animate animate__fadeInUp reveal">
               <Review>
                 <ReviewImg $url={t(`reviews.items.${index}.img`)} />
 

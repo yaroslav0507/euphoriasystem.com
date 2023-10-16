@@ -8,6 +8,7 @@ export const SiteButton = styled(Button)<ButtonProps>`
     padding: 12px;
     font-size: 14px;
     font-weight: 500;
+    white-space: nowrap;
     text-transform: uppercase;
     color: ${({ variant }) => (variant === "outline-primary" ? "#FFF" : "#000")};
     border: ${({ variant }) =>

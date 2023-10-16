@@ -4,7 +4,7 @@ import IconUp from "../../img/icons/icon_up.svg";
 export const ScrollTopElement = styled.div`
   width: 84px;
   height: 84px;
-  margin: 40px auto;
+  margin: 80px auto 60px;
   border-radius: 100%;
   cursor: pointer;
   background-image: url(${IconUp});
@@ -28,7 +28,6 @@ export const ScrollTop = () => {
   return (
     <ScrollTopElement
       onClick={scrollToTop}
-      className="animate__animated animate__fadeInUp reveal"
     />
   );
 };

@@ -12,10 +12,10 @@ import { SectionBanner } from "../shared/SectionBanner";
 import { ScrollTop } from "../shared/ScrollTop";
 import { useTranslation } from "react-i18next";
 import { device } from "../shared/breakpoints";
-import { getAnalytics, logEvent } from "firebase/analytics";
-import { app } from "../../firebase";
+import { logEvent } from "firebase/analytics";
+import { analytics } from "../../firebase";
 import { BackgroundSection } from "../shared/common";
-const analytics = getAnalytics(app);
+
 
 const ContactsWrapper = styled.div`
   background: radial-gradient(#06121d, #08182696, transparent);
@@ -206,7 +206,7 @@ export const ContactsSection = () => {
             />
           </Col>
 
-          <Col xs="12">
+          <Col xs="12" className="animate__animated animate__fadeInUp reveal">
             <ScrollTop />
           </Col>
         </Row>
