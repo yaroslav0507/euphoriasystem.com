@@ -43,9 +43,7 @@ export const Locale = () => {
   const isUA = i18n.language === "ua";
 
   useEffect(() => {
-    if (i18n.language === 'en-US') {
-      changeLanguage('en')
-    }
+    changeLanguage(i18n.language === 'en-US' ? 'en' : 'ua');
   }, []);
 
   const changeLanguage = (lng: TLocale) => {
