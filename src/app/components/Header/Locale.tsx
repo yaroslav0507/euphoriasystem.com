@@ -2,7 +2,7 @@ import EN from "../../img/langs/en.svg";
 import UA from "../../img/langs/ua.svg";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
+import { displayUkrainian } from "../../../i18n";
 import { createTransformAnimation } from "../shared/animations";
 
 const LocaleBox = styled.div`
@@ -36,22 +36,18 @@ const FlagsGroup = styled.div<{ $isUA: boolean }>`
   transform: ${({ $isUA }) => $isUA ? 'rotateY(180deg)' : 'none'}
 `;
 
-type TLocale = "en" | "ua";
+type TLocale = "en" | "uk";
 
 export const Locale = () => {
   const { i18n } = useTranslation();
-  const isUA = i18n.language === "ua";
+  const isUA = displayUkrainian(navigator.language);
 
-  useEffect(() => {
-    changeLanguage(i18n.language === 'en-US' ? 'en' : 'ua');
-  }, []);
-
-  const changeLanguage = (lng: TLocale) => {
+  const selectLanguage = (lng: TLocale) => {
     i18n.changeLanguage(lng);
   };
 
   const toggleLocale = () => {
-    changeLanguage(isUA ? "en" : "ua");
+    selectLanguage(isUA ? "en" : "uk");
   };
 
   return (

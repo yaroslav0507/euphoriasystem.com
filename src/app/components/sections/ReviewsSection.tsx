@@ -1,13 +1,9 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { SectionHeader } from "../shared/SectionHeader";
-import ReviewRajesh from '../../img/reviews/review_rajesh.png';
-import RevievGandhi from '../../img/reviews/review_gandhi.png';
-import RevievSadhguru from '../../img/reviews/review_sadhguru.png';
 import QuoteStart from '../../img/quote_start.svg';
 import QuoteEnd from '../../img/quote_end.svg';
 import styled from 'styled-components';
 import { useTranslation } from "react-i18next";
-import i18next from "../../../i18n";
 import { device } from "../shared/breakpoints";
 
 const Review = styled.div`
