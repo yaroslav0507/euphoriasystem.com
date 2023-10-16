@@ -8,7 +8,7 @@ import './app/firebase';
 import 'animate.css';
 import "./index.css";
 import './i18n';
-
+import { reveal } from './app/animate';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

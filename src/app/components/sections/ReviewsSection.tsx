@@ -32,14 +32,14 @@ const Review = styled.div`
   }
 `;
 
-const ReviewImg = styled.div<{ url: string }>`
+const ReviewImg = styled.div<{ $url: string }>`
   width: 150px;
   height: 150px;
   margin-top: -100%;
   border-radius: 100%;
   overflow: hidden;
   margin: 0 auto;
-  background: url(${({ url }) => url});
+  background: url(${({ $url }) => $url});
   background-size: cover;
   background-position: center;
   position: relative;
@@ -117,18 +117,18 @@ export const ReviewsSection = () => {
       <Container id="reviews" className="pb-xl-5">
         <Row>
           <Col xs="12">
-            <SectionHeader 
+            <SectionHeader
               name={t('reviews.name')}
               title={t('reviews.title')}
             />
           </Col>
         </Row>
 
-        <Row className="align-items-end justify-content-center mb-5">
+        <Row className="align-items-end justify-content-center overflow-hidden mb-5">
           {reviews.map((review, index) => (
-            <Col key={index} xs="12" md="6" lg="4">
+            <Col key={index} xs="12" md="6" lg="4" className="animated__animate animate__fadeIn reveal">
               <Review>
-                <ReviewImg url={t(`reviews.items.${index}.img`)} />
+                <ReviewImg $url={t(`reviews.items.${index}.img`)} />
 
                 <ReviewContainer>
                   <ReviewTitle>{t(`reviews.items.${index}.title`)}</ReviewTitle>

@@ -34,8 +34,8 @@ export const MaterialsSection = () => {
         <SectionRow className="flex-sm-row-reverse">
           <Col xs="12" md="6">
             <ImageSection
-              url={ BgCooper } 
-              direction="left"
+              $url={BgCooper}
+              $direction="left"
             />
           </Col>
   
@@ -66,8 +66,8 @@ export const MaterialsSection = () => {
         <SectionRow className="mb-5">
           <Col xs="12" md="6">
             <ImageSection
-              url={ BgAluminium } 
-              direction="right"
+              $url={BgAluminium}
+              $direction="right"
             />
           </Col>
   
@@ -94,8 +94,8 @@ export const MaterialsSection = () => {
         <Row>
           <Col xs="12">
             <SectionBanner
-              bgSize="cover"
-              bgPosition="10% 0"
+              $bgSize="cover"
+              $bgPosition="10% 0"
               buttonLink="#contacts"
               title={t('materials.guide.title')}
               content={t('materials.guide.text')}

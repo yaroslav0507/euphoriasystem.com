@@ -12,8 +12,6 @@ import { SectionBanner } from "../shared/SectionBanner";
 import { ScrollTop } from "../shared/ScrollTop";
 import { useTranslation } from "react-i18next";
 import { device } from "../shared/breakpoints";
-import useIntersectionObserver from "../../hooks/useIntersectionObserver";
-import { useRef } from "react";
 import { getAnalytics, logEvent } from "firebase/analytics";
 import { app } from "../../firebase";
 import { BackgroundSection } from "../shared/common";
@@ -63,13 +61,13 @@ const Contact = styled.a`
   }
 `;
 
-const Map = styled.div<{ url: string }>`
+const Map = styled.div<{ $url: string }>`
   position: relative;
   border-radius: 15px;
   overflow: hidden;
   height: 270px;
   width: 100%;
-  background: url(${({ url }) => url});
+  background: url(${({ $url }) => $url});
   background-size: cover;
   background-position: 0 30%;
 `;
@@ -114,8 +112,6 @@ const ContactsBackgroundSection = styled(BackgroundSection)`
 
 export const ContactsSection = () => {
   const { t } = useTranslation();
-  const ref = useRef<HTMLDivElement>(null);
-  const isVisible = useIntersectionObserver(ref);
 
   const logAnalytics = (key: 'phone' | 'telegram' | 'instagram') => {
     logEvent(analytics, 'generate_lead', { key });
@@ -176,7 +172,7 @@ export const ContactsSection = () => {
           </Col>
 
           <Col xs="12" md="6" xl="4" className="mb-5">
-            <Map url={ImgMap}>
+            <Map $url={ImgMap}>
               <Legend>
                 {t('contacts.map')}
                 <ImgFlag src={FlagUA} alt="We Are Here" />
@@ -201,8 +197,8 @@ export const ContactsSection = () => {
 
           <Col xs="12">
             <SectionBanner
-              bgSize="cover"
-              bgPosition="10% 0"
+              $bgSize="cover"
+              $bgPosition="10% 0"
               buttonLink="#contacts"
               title={t('contacts.banner.title')}
               content={t('contacts.banner.text')}
@@ -210,13 +206,13 @@ export const ContactsSection = () => {
             />
           </Col>
 
-          <Col xs="12" ref={ref}>
-            <ScrollTop isVisible={isVisible} />
+          <Col xs="12">
+            <ScrollTop />
           </Col>
         </Row>
       </Container>
 
-      <ContactsBackgroundSection bg={BgHomeVortex} />
+      <ContactsBackgroundSection $bg={BgHomeVortex} />
     </ContactsWrapper>
   );
 };

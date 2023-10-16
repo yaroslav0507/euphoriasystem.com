@@ -35,7 +35,7 @@ const Title = styled.div`
 
 export const SectionHeader: FC<SectionHeaderProps> = ({ title, name }) => {
   return (
-    <Wrapper>
+    <Wrapper className="animated__animate animate__fadeIn reveal">
       <Name>{name}</Name>
       <Title>{title}</Title>
     </Wrapper>

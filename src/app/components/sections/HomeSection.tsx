@@ -22,15 +22,16 @@ const Stage = styled(Row)`
   }
 `;
 
-const ProductImage = styled.div<{ url: string }>`
+const ProductImage = styled.div<{ $url: string }>`
   max-width: 100%;
-  background: url(${({ url }) => url});
+  background: url(${({ $url }) => $url});
   background-position: center 0;
   background-repeat: no-repeat;
   background-size: 100%;
   width: 100%;
   height: 100%;
   margin: auto;
+  animation-delay: .5s;
 
   ${device.sm} {
     background-position: center;
@@ -180,15 +181,15 @@ export const HomeSection = () => {
             xxl="5"
           >
             <ProductImage 
-              url={HeroImage}
-              className="animate__animated animate__zoomIn animate__delay-1s"
+              $url={HeroImage}
+              className="animate__animated animate__zoomIn reveal"
             />
           </ProductCol>
         </Stage>
   
         <BackgroundSection
-          bg={BgHomeVortex}
-          headerHeight={headerHeight}
+          $bg={BgHomeVortex}
+          $headerHeight={headerHeight}
         />
       </Container>
     </HomeWrapper>

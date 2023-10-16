@@ -7,8 +7,8 @@ import { useTranslation } from "react-i18next";
 import { FireButton } from "./FireButton";
 
 interface BackgroundProps {
-  bgSize?: string;
-  bgPosition?: string;
+  $bgSize?: string;
+  $bgPosition?: string;
 }
 
 interface SectionBannerProps extends BackgroundProps {
@@ -48,8 +48,8 @@ const Wrapper = styled.div<BackgroundProps>`
   &:before {
     content: '';
     background: url(${bg});
-    background-size: ${({ bgSize }) => bgSize || '200%'};
-    background-position: ${({ bgPosition }) => bgPosition || '60% 0' };
+    background-size: ${({ $bgSize }) => $bgSize || '200%'};
+    background-position: ${({ $bgPosition }) => $bgPosition || '60% 0' };
   }
 
   &:after {
@@ -85,10 +85,11 @@ export const SectionBanner: FC<SectionBannerProps> = ({
   content,
   buttonLink,
   translationKey,
-  ...bgProps
+  $bgSize,
+  $bgPosition
  }) => {
   return (
-    <Wrapper {...bgProps}>
+    <Wrapper $bgSize={$bgSize} $bgPosition={$bgPosition}>
       <Title>{title}</Title>
 
       <Container>

@@ -28,23 +28,23 @@ const HeaderCol = styled(Col)`
 `;
 
 const HeaderControls = styled.div<{
-  isSticky?: boolean;
-  isStatic?: boolean;
-  shouldAnimate?: boolean;
+  $isSticky?: boolean;
+  $isStatic?: boolean;
+  $shouldAnimate?: boolean;
 }>`
-  opacity: ${({ isStatic }) => isStatic ? '1' : '0'};
-  position: ${({ isStatic }) => isStatic ? 'initial' : 'fixed'};
+  opacity: ${({ $isStatic }) => $isStatic ? '1' : '0'};
+  position: ${({ $isStatic }) => $isStatic ? 'initial' : 'fixed'};
   display: flex;
   border-radius: 5px;
   z-index: 3;
   position: absolute;
 
-  ${({ shouldAnimate }) => shouldAnimate && `
+  ${({ $shouldAnimate }) => $shouldAnimate && `
     transition: transform .5s ease;
     transform: translateY(-100%);
   `}
 
-  ${({ isStatic }) => !isStatic && `
+  ${({ $isStatic }) => !$isStatic && `
     position: fixed;
     background: #ffffff1c;
     width: auto;
@@ -54,7 +54,7 @@ const HeaderControls = styled.div<{
     top: 0;
   `};
 
-  ${({ isSticky }) => isSticky && `
+  ${({ $isSticky }) => $isSticky && `
     opacity: 1;
     transform: none;
 
@@ -87,7 +87,7 @@ export const Header = () => {
 
   const STATIC_MENU_VISIBILITY_OFFSET = window.innerHeight - 1;
   const isStatic = scrollTop <= STATIC_MENU_VISIBILITY_OFFSET;
-  const isisSticky = scrollTop >= window.innerHeight;
+  const isSticky = scrollTop >= window.innerHeight;
   const shouldAnimate = scrollTop >= window.innerHeight / 2;
 
   return useMemo(() => (
@@ -103,9 +103,9 @@ export const Header = () => {
             justify="flex-end"
           >
             <HeaderControls
-              isSticky={isisSticky}
-              isStatic={isStatic}
-              shouldAnimate={shouldAnimate}
+              $isSticky={isSticky}
+              $isStatic={isStatic}
+              $shouldAnimate={shouldAnimate}
             >
               <Locale />
               <Menu scrollTop={scrollTop}/>
@@ -114,5 +114,5 @@ export const Header = () => {
         </Row>
       </Container>
     </HeaderWrapper>
-  ), [isStatic, isisSticky, shouldAnimate]);
+  ), [isStatic, isSticky, shouldAnimate]);
 };

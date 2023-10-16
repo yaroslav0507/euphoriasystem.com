@@ -17,23 +17,23 @@ const LocaleBox = styled.div`
   }
 `;
 
-const Flag = styled.div<{ url: string; isUA: boolean }>`
+const Flag = styled.div<{ $url: string; }>`
   ${createTransformAnimation('flip', 'rotateY(180deg)' , 'none')}
 
   width: 100%;
   height: 100%;
   border-radius: 2px;
-  background-image: url(${({ url }) => url});
+  background-image: url(${({ $url }) => $url});
   background-size: cover;
   background-position: 0 center;
 `;
 
-const FlagsGroup = styled.div<{ isUA: boolean }>`
+const FlagsGroup = styled.div<{ $isUA: boolean }>`
   width: 36px;
   height: 20px;
   position: relative;
   transition: transform .5s ease;
-  transform: ${({ isUA }) => isUA ? 'rotateY(180deg)' : 'none'}
+  transform: ${({ $isUA }) => $isUA ? 'rotateY(180deg)' : 'none'}
 `;
 
 type TLocale = "en" | "ua";
@@ -54,8 +54,8 @@ export const Locale = () => {
 
   return (
     <LocaleBox onClick={toggleLocale}>
-      <FlagsGroup isUA={isUA}>
-        <Flag url={isUA ? UA : EN } isUA={isUA} />
+      <FlagsGroup $isUA={isUA}>
+        <Flag $url={isUA ? UA : EN} />
       </FlagsGroup>
     </LocaleBox>
   );

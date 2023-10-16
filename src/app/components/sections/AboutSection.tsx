@@ -18,7 +18,7 @@ export const AboutSection = () => {
   return (
     <AboutWrapper className="mb-xl-5">
       <Container id="about" className="z-index-1">
-        <Row>
+        <Row >
           <Col xs="12">
             <SectionHeader
               name={t('about.name')} 
@@ -32,9 +32,9 @@ export const AboutSection = () => {
         <Row>
           <Col xs="12" md="6">
             <ImageSection
-              direction="right"
-              bgColor="#01162d"
-              url={ AboutImage }
+              $direction="right"
+              $bgColor="#01162d"
+              $url={ AboutImage }
             />
           </Col>
   
@@ -58,7 +58,7 @@ export const AboutSection = () => {
             <SectionBanner
               title={t('about.banner.title')}
               content={t('about.banner.text')}
-              bgSize="cover"
+              $bgSize="cover"
             />
           </Col>
         </Row>

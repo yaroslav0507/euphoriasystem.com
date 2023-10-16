@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import IconUp from "../../img/icons/icon_up.svg";
-import { FC } from "react";
 
 export const ScrollTopElement = styled.div`
   width: 84px;
@@ -18,11 +17,7 @@ export const ScrollTopElement = styled.div`
   } 
 `;
 
-interface IScrollTopProps {
-  isVisible: boolean;
-}
-
-export const ScrollTop: FC<IScrollTopProps> = ({ isVisible }) => {
+export const ScrollTop = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -30,16 +25,10 @@ export const ScrollTop: FC<IScrollTopProps> = ({ isVisible }) => {
     });
   };
 
-  const classNames = ['animate__animated'];
-
-  if (isVisible) {
-    classNames.push('animate__fadeInUp');
-  }
-
   return (
     <ScrollTopElement
       onClick={scrollToTop}
-      className={classNames.join(' ')}
+      className="animate__animated animate__fadeInUp reveal"
     />
   );
 };

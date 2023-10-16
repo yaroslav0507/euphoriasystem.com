@@ -68,26 +68,26 @@ export const SectionTextWrapper = styled.div<{ direction: TDirection }>`
 `;
 
 export const ImageSection = styled.div<{ 
-  url: string;
-  direction: TDirection;
-  bgSize?: string;
-  bgColor?: string;
-  bgPosition?: string;
+  $url: string;
+  $direction: TDirection;
+  $bgSize?: string;
+  $bgColor?: string;
+  $bgPosition?: string;
  }>`
   width: calc(100% + 24px);
   margin-left: -12px;
   height: 100%;
   min-height: 570px;
-  background: url(${({ url }) => url });
-  background-size: ${({ bgSize }) => bgSize || 'cover' };
-  background-position: ${({ bgPosition }) => bgPosition || 'center' };
+  background: url(${({ $url }) => $url});
+  background-size: ${({ $bgSize }) => $bgSize || 'cover'};
+  background-position: ${({ $bgPosition }) => $bgPosition || 'center' };
   position: relative;
 
   &&:before {
     top: 0;
     transform: scale(-1);
     background: linear-gradient(
-      to bottom ${({ direction }) => direction || 'left'},
+      to bottom ${({ $direction }) => $direction || 'left'},
       transparent 0%,
       transparent 50%,
       #01162d 50%,
@@ -107,15 +107,15 @@ export const ImageSection = styled.div<{
     position: absolute;
 
     background: linear-gradient(
-      to bottom ${({ direction }) => direction || 'left'},
+      to bottom ${({ $direction }) => $direction || 'left'},
       transparent 0%,
       transparent 50%,
-      ${({ bgColor }) => bgColor || '#031837'} 50%,
-      ${({ bgColor }) => bgColor || '#031837'} 100%
+      ${({ $bgColor }) => $bgColor || '#031837'} 50%,
+      ${({ $bgColor }) => $bgColor || '#031837'} 100%
     );
 
     ${device.md} {
-      ${({ direction }) => direction === 'left' ? `
+      ${({ $direction }) => $direction === 'left' ? `
         left: -1px;
       ` : `
         right: -1px;
@@ -124,19 +124,19 @@ export const ImageSection = styled.div<{
       top: 0;
       height: 100%;
       width: 10%;
-      transform: ${({ direction }) => direction === 'left' ? 'scaleY(-1)' : ' '};
+      transform: ${({ $direction }) => $direction === 'left' ? 'scaleY(-1)' : ' '};
     }
   }
 `;
 
-export const BackgroundSection = styled.div<{ bg: string, headerHeight?: string }>`
+export const BackgroundSection = styled.div<{ $bg: string, $headerHeight?: string }>`
   position: absolute;
   z-index: -1;
   width: 100%;
-  height: calc(100% + ${({ headerHeight }) => headerHeight || '0px'});
-  top: -${({ headerHeight }) => headerHeight || '0px'};
+  height: calc(100% + ${({ $headerHeight }) => $headerHeight || '0px'});
+  top: -${({ $headerHeight }) => $headerHeight || '0px'};
   left: 0;
-  background: url(${({ bg }) => bg});
+  background: url(${({ $bg }) => $bg});
   background-size: cover;
   background-position: center 0;
   background-repeat: no-repeat;
