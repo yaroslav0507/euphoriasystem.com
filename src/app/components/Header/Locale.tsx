@@ -2,7 +2,7 @@ import EN from "../../img/langs/en.svg";
 import UA from "../../img/langs/ua.svg";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createTransformAnimation } from "../shared/animations";
 
 const LocaleBox = styled.div`
@@ -42,11 +42,15 @@ export const Locale = () => {
   const { i18n } = useTranslation();
   const isUA = i18n.language === "ua";
 
-  const [url, setUrl] = useState(isUA ? UA : EN);
+  useEffect(() => {
+    if (i18n.language === 'en-US') {
+      changeLanguage('en')
+    }
+  }, []);
+
   const changeLanguage = (lng: TLocale) => {
     i18n.changeLanguage(lng);
   };
-
 
   const toggleLocale = () => {
     changeLanguage(isUA ? "en" : "ua");
