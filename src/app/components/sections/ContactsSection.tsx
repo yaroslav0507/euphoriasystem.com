@@ -15,6 +15,7 @@ import { device } from "../shared/breakpoints";
 import { logEvent } from "firebase/analytics";
 import { analytics } from "../../firebase";
 import { BackgroundSection } from "../shared/common";
+import { Price } from "../Price";
 
 
 const ContactsWrapper = styled.div`
@@ -110,74 +111,6 @@ const ContactsBackgroundSection = styled(BackgroundSection)`
   }
 `;
 
-const Price = styled.span<{ $before: string }>`
-  position: relative;
-  font-size: 85px;
-  font-weight: 700;
-  padding-top: 32px;
-  z-index: 1;
-
-  &:after {
-    content: '';
-    position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
-    top: 18px;
-    width: 90px;
-    height: 2px;
-    background: #ffffffe8;
-  }
-
-  &:before {
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 120px;
-    margin: auto;
-    font-size: 28px;
-    font-weight: 400;
-    padding: 5px 7px;
-    line-height: 1em;
-    position: absolute;
-    border-radius: 5px;
-    background: #ffffff1f;
-    z-index: -2;
-    content: '${({ $before }) => $before}';
-
-    ${device.xl} {
-      left: initial;
-    }
-  }
-`;
-
-const Descriptor = styled.div`
-  font-size: 12px;
-  max-width: 210px;
-  text-align: center;
-  margin: auto;
-
-  ${device.sm} {
-    margin-top: 0;
-    max-width: none;
-  }
-
-  ${device.md} {
-    font-size: 14px;
-  }
-
-  ${device.xl} {
-    text-align: left;
-    margin-top: -24px;
-  }
-
-  &:before {
-    content: '*';
-    transform: translateX(-100%);
-    position: absolute;
-  }
-`
-
 export const ContactsSection = () => {
   const { t } = useTranslation();
 
@@ -256,19 +189,9 @@ export const ContactsSection = () => {
               {t('contacts.delivery.text')}
             </p>
 
-            <h4 className="mb-5 mb-xl-0 pb-5 pb-xl-0">{t('contacts.pricing.title')}</h4>
+            <h4 className="mb-5 mb-xl-0">{t('contacts.pricing.title')}</h4>
 
-            <Row className="mb-5 mb-xl-0 pt-5 pt-xl-0">
-              <Col xs="12" xl="7" xxl="6" className="text-center">
-                <Price $before="$200">
-                  $150
-                </Price>
-              </Col>
-
-              <Col xs="12" xl="5" xxl="6" className="d-flex align-items-center">
-                <Descriptor>{t('contacts.pricing.text')}</Descriptor>
-              </Col>
-            </Row>
+            <Price usd={150}/> 
           </Col>
 
           <Col xs="12">

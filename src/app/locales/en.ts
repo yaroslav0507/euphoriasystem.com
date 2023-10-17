@@ -67,7 +67,7 @@ export default {
     },
     contacts: {
         name: "Contacts",
-        title: "Call/Text us To Purchase",
+        title: "Call/Text To Purchase",
         map: "We are Here",
         delivery: {
             title: "Delivery",
