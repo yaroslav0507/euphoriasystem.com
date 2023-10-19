@@ -164,7 +164,7 @@ export const ContactsSection = () => {
                 onClick={contact.onClick}
               >
                 <ContactIcon>
-                  <img src={contact.icon} />
+                  <img src={contact.icon} alt={contact.text} />
                 </ContactIcon>
 
                 <span>{contact.text}</span>
@@ -177,7 +177,7 @@ export const ContactsSection = () => {
               <Legend>
                 {t('contacts.map')}
                 <ImgFlag src={FlagUA} alt="We Are Here" />
-                <ImgArrow src={IconArrow} />
+                <ImgArrow src={IconArrow} alt="Location pointer" />
               </Legend>
             </Map>
           </Col>
@@ -191,7 +191,7 @@ export const ContactsSection = () => {
 
             <h4 className="mb-5 mb-xl-0">{t('contacts.pricing.title')}</h4>
 
-            <Price usd={150}/> 
+            <Price usd={150} />
           </Col>
 
           <Col xs="12">

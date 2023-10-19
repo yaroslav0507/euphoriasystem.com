@@ -12,8 +12,10 @@ export const headerHeight = '100px';
 
 const HeaderWrapper = styled.div`
   height: ${headerHeight};
+  position: relative;
   padding: 12px 0;
   display: flex;
+  z-index: 1;
 
   ${device.sm} {
     align-items: center;
