@@ -15,7 +15,7 @@ const HeaderWrapper = styled.div`
   position: relative;
   padding: 12px 0;
   display: flex;
-  z-index: 1;
+  z-index: 3;
 
   ${device.sm} {
     align-items: center;

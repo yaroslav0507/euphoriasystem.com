@@ -70,7 +70,7 @@ export default {
         title: "Call/Text To Purchase",
         map: "We are Here",
         delivery: {
-            title: "Delivery",
+            title: "Delivery is Free!",
             text: "We ship our boards worldwide except russia and belarus. Delivery by Ukraine is done by Nova Poshta provider."
         },
         pricing: {
