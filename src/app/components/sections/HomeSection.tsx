@@ -145,6 +145,10 @@ const HomeBackgroundSection = styled(BackgroundSection) <{ $active?: boolean }>`
   ${device.sm} {
     height: calc(110% + ${headerHeight});
   }
+
+  ${device.md} {
+    top: -140px;
+  }
 `;
 
 const bgVariants = [
